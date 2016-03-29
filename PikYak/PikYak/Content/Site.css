@@ -22,3 +22,33 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/*FAQ CSS*/
+
+.topicContainer{
+
+    text-align:center; 
+    padding-top:3em; 
+}
+
+/*CSS for button toggles*/
+#accordion .highlight {
+	background:cornflowerblue;
+	transition:background 2s ease;
+}
+
+.panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	content: "\2b";    /* adjust as needed, taken from bootstrap.css */
+	float: right;        /* adjust as needed */
+	color: orange;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+    content:"\2212" ;    /* adjust as needed, taken from bootstrap.css */
+}
+.accordion-toggle:hover {
+	text-decoration: none;
+}
