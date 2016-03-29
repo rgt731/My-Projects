@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: mediumpurple;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,60 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.footer{
+    width: 140px;
+    margin: 0px auto;
+    font-weight: bold;
+}
+
+.rightTab{
+    border-radius: 5px;
+    float: right;
+    margin-top: 10px;
+}
+
+.form-control{
+    border-radius: 0px;
+}
+
+.searchButt{
+    border-radius: 0px;
+}
+
+.yak{
+    margin-left: 30px;
+    border-radius: 3px;
+
+
+
+/*FAQ CSS*/
+
+.topicContainer{
+
+    text-align:center; 
+    padding-top:3em; 
+}
+
+/*CSS for button toggles*/
+#accordion .highlight {
+	background:cornflowerblue;
+	transition:background 2s ease;
+}
+
+.panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	content: "\2b";    /* adjust as needed, taken from bootstrap.css */
+	float: right;        /* adjust as needed */
+	color: orange;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+    content:"\2212" ;    /* adjust as needed, taken from bootstrap.css */
+}
+.accordion-toggle:hover {
+	text-decoration: none;
 }
