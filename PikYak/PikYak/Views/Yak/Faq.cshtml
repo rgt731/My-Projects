@@ -28,7 +28,7 @@
                                 <h4 class="panel-title">
 
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                        <i class="indicator glyphicon glyphicon-plus"></i>  What is PikYak?
+                                         What is PikYak?
                                     </a>
                                 </h4>
                             </div>
@@ -42,7 +42,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                        <i class="indicator glyphicon glyphicon-plus"></i>How do I report a yak?
+                                       How do I report a yak?
                                     </a>
                                 </h4>
                             </div>
@@ -57,7 +57,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                        <i class="indicator glyphicon glyphicon-plus"></i>  What is a "Yak"?
+                                         What is a "Yak"?
                                     </a>
                                 </h4>
                             </div>
@@ -88,7 +88,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
-                                        <i class="indicator glyphicon glyphicon-plus"></i> How do I share "Yak's"?
+                                          How do I share "Yak's"?
                                     </a>
                                 </h4>
                             </div>
@@ -103,7 +103,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
-                                        <i class="indicator glyphicon glyphicon-plus"></i> How to report an unkind yak?
+                                        How to report an unkind yak?
                                     </a>
                                 </h4>
                             </div>
@@ -118,7 +118,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
-                                        <i class="indicator glyphicon glyphicon-plus"></i> How do I delete a YAK?
+                                          How do I delete a YAK?
                                     </a>
                                 </h4>
                             </div>
@@ -154,7 +154,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse7">
-                                        <i class="indicator glyphicon glyphicon-plus"></i> How can I tell other people about the site?
+                                            How can I tell other people about the site?
                                     </a>
                                 </h4>
                             </div>
@@ -168,7 +168,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse8">
-                                        <i class="indicator glyphicon glyphicon-plus"></i> Can I donate money to help the application get better?
+                                           Can I donate money to help the application get better?
                                     </a>
                                 </h4>
                             </div>
@@ -183,7 +183,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse9">
-                                        <i class="indicator glyphicon glyphicon-plus"></i>  How can I give feedback about PikYak?
+                                            How can I give feedback about PikYak?
                                     </a>
                                 </h4>
                             </div>
@@ -211,8 +211,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<script>
 
+<!-- Script for Panel One -->
+<script>
 function toggleChevron(e) {
       $(e.target)
         .prev('.panel-heading')
@@ -220,9 +221,9 @@ function toggleChevron(e) {
         .toggleClass('glyphicon-minus glyphicon-plus');
 
 
-      $('#accordion .panel-heading').css('background-color', 'yellow');
+      $('#accordion .panel-heading').css('background-color', '#25B2FF');
       $(e.target)
-         .prev('.panel-heading').css('background-color', 'cornflowerblue');
+         .prev('.panel-heading').css('background-color', 'mediumpurple');
       $('#accordion .panel-heading').removeClass('highlight');
 		$(e.target).prev('.panel-heading').addClass('highlight');
 }
@@ -231,8 +232,8 @@ $('#accordion').on('shown.bs.collapse', toggleChevron);
 
 </script>
 
+<!-- Script for Panel Two -->
 <script>
-
   function toggleChevron(e) {
 $(e.target)
 .prev('.panel-heading')
@@ -240,9 +241,9 @@ $(e.target)
 .toggleClass('glyphicon-minus glyphicon-plus');
 
 
-$('#accordion2 .panel-heading').css('background-color', 'yellow');
+$('#accordion2 .panel-heading').css('background-color', '#25B2FF');
 $(e.target)
-   .prev('.panel-heading').css('background-color', 'cornflowerblue');
+   .prev('.panel-heading').css('background-color', 'mediumpurple');
 $('#accordion2 .panel-heading').removeClass('highlight');
 $(e.target).prev('.panel-heading').addClass('highlight');
 }
@@ -251,8 +252,8 @@ $('#accordion2').on('shown.bs.collapse', toggleChevron);
 
 </script>
 
+<!-- Script for Panel Three -->
 <script>
-
   function toggleChevron(e) {
 $(e.target)
 .prev('.panel-heading')
@@ -260,9 +261,9 @@ $(e.target)
 .toggleClass('glyphicon-minus glyphicon-plus');
 
 
-$('#accordion3 .panel-heading').css('background-color', 'yellow');
+$('#accordion3 .panel-heading').css('background-color', '#25B2FF');
 $(e.target)
-   .prev('.panel-heading').css('background-color', 'cornflowerblue');
+   .prev('.panel-heading').css('background-color', 'mediumpurple');
 $('#accordion3 .panel-heading').removeClass('highlight');
 $(e.target).prev('.panel-heading').addClass('highlight');
 }
