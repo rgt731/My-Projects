@@ -64,21 +64,19 @@ textarea {
 	transition:background 2s ease;
 }
 
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-    content: "\2b";    /* adjust as needed, taken from bootstrap.css */
-    float: right;        /* adjust as needed */
-    color: red;         /* adjust as needed */
+    content: "\2b";    /* toggle icon " + " */
+    float: right;        /* position of toggle icons */
+    color: red;         /* Color for toggle icons */
 }
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
-    content: "\2212";    /* adjust as needed, taken from bootstrap.css */
+    content: "\2212";    /* toggle icon " - "  */
 }
 
-.accordion-toggle:hover {
-	text-decoration: none;
-}
 
 .headerImg{
     text-align:center;
