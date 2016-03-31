@@ -87,3 +87,63 @@ textarea {
 }
 
 
+/* Yak Post CSS*/
+
+.postTitle {
+    text-align: center;
+    color: mediumpurple;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.modalSize {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.textBox {
+    height: 300px;
+    width: 100%;
+}
+
+.textBox textarea {
+    height: 100%;
+}
+
+
+.modal-footer h3 {
+    text-align: center;
+}
+
+.postCancel {
+    float: right;
+}
+
+.postButton {
+    margin-top: 5%;
+    background-color: white !important;
+    border: 1px solid black !important;
+    color: rebeccapurple !important;
+}
+
+.postButton:hover, .postButton:active, 
+.postButton:visited, .postButton:default {
+    background-color: rebeccapurple  !important;
+    border: 1px solid black  !important;
+    color: white  !important;
+}
+
+.modal-backdrop
+{
+    opacity:0.8 !important;
+}
+
+ .close {
+    margin-left: 5%;
+    background-color: white !important;
+    color: rebeccapurple !important;
+    opacity: 1.0 !important;
+}
+
