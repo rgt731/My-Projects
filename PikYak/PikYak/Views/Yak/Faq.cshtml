@@ -3,8 +3,16 @@
     ViewBag.Title = "Faq";
 }
 
+
 <h3 style="text-align:center;">What everyone is talking about...</h3>
 <h2 style="text-align:center;"> Frequently Asked Questions</h2>
+
+<!--
+<div class="headerImg">
+    <h2>  <img src="~/Content/Images/faq-header2a.jpg" /></h2>
+</div>-->
+
+
 <div class="row">
     <div class="topicContainer">
         <div class="col-md-4">
@@ -16,18 +24,15 @@
                     <!--Button group collapsable-->
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <div class="panel-heading highlight">
                                 <h4 class="panel-title">
-                      
+
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                        What is PikYak?
-                              
-                                    
-                              
+                                         What is PikYak?
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapse1" class="panel-collapse collapse">
+                            <div id="collapse1" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <p> An application dedicated to spreading kindess through anonymous sharing</p>
                                 </div>
@@ -37,7 +42,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                        How do I report a yak?
+                                       How do I report a yak?
                                     </a>
                                 </h4>
                             </div>
@@ -60,7 +65,8 @@
                                 <div class="panel-body">
                                     <p> A "Yak" is message posted to PikYak that in its entirety is a positive message. </p>
                                     <p>A message should be intended to be kind and encouraging about whatever the topic may be.</p>
-                                    <p>These messages should be a shining light to the world that connects users together through positive encouragement.
+                                    <p>
+                                        These messages should be a shining light to the world that connects users together through positive encouragement.
                                     </p>
                                 </div>
                             </div>
@@ -82,11 +88,11 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
-                                       How do I share "Yak's"?
+                                        How do I share "Yak's"?
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapse4" class="panel-collapse collapse">
+                            <div id="collapse4" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <p>PikYak does not have this functionality because of the newness of the product.</p>
                                     <p> However, we are always looking to improve!</p>
@@ -112,17 +118,14 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
-                                        Here is another question?
+                                        How do I delete a YAK?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse6" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                      Go to the settings icon at the bottom of your Yak and click delete.
                                     </p>
                                 </div>
                             </div>
@@ -137,10 +140,14 @@
         </div>
         <div class="col-md-4">
 
+
+
+
             <!--Category for Questions 3-------------------------------------------------------------->
             <div class="panel panel-info">
                 <div class="panel-heading"><strong>Helping PikYak...</strong></div>
                 <div class="panel-body">
+
                     <!--Button group collapsable-->
                     <div class="panel-group" id="accordion3">
                         <div class="panel panel-default">
@@ -151,9 +158,9 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapse7" class="panel-collapse collapse">
+                            <div id="collapse7" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <p>You can contact them on social media outlets</p>
+                                    <p>You can contact them on other social media outlets</p>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +174,7 @@
                             </div>
                             <div id="collapse8" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p>We appreciate your want to help but this is a free application and want .</p>
+                                    <p>We appreciate your want to help but this is a free application and want it to stay that way.</p>
 
                                 </div>
                             </div>
@@ -176,13 +183,13 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse9">
-                                        Here is my next question?
+                                        How can I give feedback about PikYak?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse9" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                                    <p> We are always open for suggestions. Click the link here! </p>
                                 </div>
                             </div>
                         </div>
@@ -197,29 +204,19 @@
 
 
 <!--Second Row of FAQ's------------------------------------------------------------------------------->
-
-
-
-
 <!--Java Script at Bottom so it loads last-->
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!-- Latest compiled and minified JavaScript -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script>
 
-function toggleChevron(e) {
-      $(e.target)
-        .prev('.panel-heading')
-        .find('i.indicator')
-        .toggleClass('glyphicon-minus glyphicon-plus');
-        //$('#accordion .panel-heading').css('background-color', 'green');
-				$('#accordion .panel-heading').removeClass('highlight');
-				$(e.target).prev('.panel-heading').addClass('highlight');
-}
-$('#accordion').on('hidden.bs.collapse', toggleChevron);
-$('#accordion').on('shown.bs.collapse', toggleChevron);
+<script>
+    function toggleChevron(e) {
+        $('.collapse').on('shown.bs.collapse', function(){
+            $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+        }).on('hidden.bs.collapse', function(){
+            $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+        });
 
 </script>
