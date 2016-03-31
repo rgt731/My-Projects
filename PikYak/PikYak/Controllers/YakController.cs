@@ -24,9 +24,13 @@ namespace PikYak.Controllers
             return View();
         }
 
+<<<<<<< HEAD
+        
+=======
         public ActionResult YakPost()
         {
             return View();
         }
+>>>>>>> origin/master
     }
 }
