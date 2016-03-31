@@ -23,5 +23,10 @@ namespace PikYak.Controllers
         {
             return View();
         }
+
+        public ActionResult YakPost()
+        {
+            return View();
+        }
     }
 }
