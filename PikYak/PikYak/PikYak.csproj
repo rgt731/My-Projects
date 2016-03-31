@@ -243,11 +243,8 @@
     <Content Include="Views\Yak\Index.cshtml" />
     <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Yak\YaksPartial.cshtml" />
-=======
     <Content Include="Views\Yak\YakPost.cshtml" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
