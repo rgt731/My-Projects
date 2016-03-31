@@ -66,16 +66,84 @@ textarea {
 }
 
 .panel-heading .accordion-toggle:after {
-	/* symbol for "opening" panels */
+    /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-	content: "\2b";    /* adjust as needed, taken from bootstrap.css */
-	float: right;        /* adjust as needed */
-	color: orange;         /* adjust as needed */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: orange;         /* adjust as needed */
 }
 .panel-heading .accordion-toggle.collapsed:after {
-	/* symbol for "collapsed" panels */
-    content:"\2212" ;    /* adjust as needed, taken from bootstrap.css */
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
 .accordion-toggle:hover {
 	text-decoration: none;
 }
+
+.headerImg{
+    text-align:center;
+  
+}
+
+
+/* Yak Post CSS*/
+
+.postTitle {
+    text-align: center;
+    color: mediumpurple;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.modalSize {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.textBox {
+    height: 300px;
+    width: 100%;
+}
+
+.textBox textarea {
+    height: 100%;
+}
+
+
+.modal-footer h3 {
+    text-align: center;
+}
+
+.postCancel {
+    float: right;
+}
+
+.postButton {
+    margin-top: 5%;
+    background-color: white !important;
+    border: 1px solid black !important;
+    color: rebeccapurple !important;
+}
+
+.postButton:hover, .postButton:active, 
+.postButton:visited, .postButton:default {
+    background-color: rebeccapurple  !important;
+    border: 1px solid black  !important;
+    color: white  !important;
+}
+
+.modal-backdrop
+{
+    opacity:0.8 !important;
+}
+
+ .close {
+    margin-left: 5%;
+    background-color: white !important;
+    color: rebeccapurple !important;
+    opacity: 1.0 !important;
+}
+
