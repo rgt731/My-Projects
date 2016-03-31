@@ -238,6 +238,7 @@
     <Content Include="Views\Yak\Index.cshtml" />
     <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
+    <Content Include="Views\Yak\YaksPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
