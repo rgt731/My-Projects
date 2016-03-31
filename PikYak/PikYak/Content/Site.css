@@ -45,10 +45,10 @@ textarea {
     border-radius: 0px;
 }
 
-.yak{
+.yak {
     margin-left: 30px;
     border-radius: 3px;
-
+}
 
 
 /*FAQ CSS*/
@@ -123,27 +123,33 @@ textarea {
 
 .postButton {
     margin-top: 5%;
-    background-color: white !important;
-    border: 1px solid black !important;
-    color: rebeccapurple !important;
+    background-color: white;
+    border: 1px solid black;
+    color: rebeccapurple;
 }
 
 .postButton:hover, .postButton:active, 
 .postButton:visited, .postButton:default {
-    background-color: rebeccapurple  !important;
-    border: 1px solid black  !important;
-    color: white  !important;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    color: white;
 }
 
 .modal-backdrop
 {
-    opacity:0.8 !important;
+    opacity:0.8;
 }
 
- .close {
+ #PostModal .close {
     margin-left: 5%;
-    background-color: white !important;
-    color: rebeccapurple !important;
-    opacity: 1.0 !important;
+    background-color: white;
+    color: mediumpurple;
+    opacity: 1.0;
 }
+
+ #PostModal .close:hover {
+     color: rebeccapurple;
+ }
+
+
 
