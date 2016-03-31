@@ -66,16 +66,24 @@ textarea {
 }
 
 .panel-heading .accordion-toggle:after {
-	/* symbol for "opening" panels */
+    /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-	content: "\2b";    /* adjust as needed, taken from bootstrap.css */
-	float: right;        /* adjust as needed */
-	color: orange;         /* adjust as needed */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: orange;         /* adjust as needed */
 }
 .panel-heading .accordion-toggle.collapsed:after {
-	/* symbol for "collapsed" panels */
-    content:"\2212" ;    /* adjust as needed, taken from bootstrap.css */
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
 .accordion-toggle:hover {
 	text-decoration: none;
 }
+
+.headerImg{
+    text-align:center;
+  
+}
+
+
