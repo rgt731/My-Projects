@@ -50,6 +50,14 @@ textarea {
     border-radius: 3px;
 }
 
+.yak img{
+    max-width: 100%;
+
+}
+
+.yak a{
+    font-size: 2em;
+}
 
 /*FAQ CSS*/
 
