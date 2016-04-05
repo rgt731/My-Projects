@@ -28,5 +28,12 @@ namespace PikYak.Controllers
         {
             return View();
         }
+
+        public ActionResult Like(string YakId)
+        {
+            Console.WriteLine("You liked a Yak" + YakId); 
+
+            return RedirectToAction("Index"); 
+        }
     }
 }
