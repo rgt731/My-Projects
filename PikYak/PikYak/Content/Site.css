@@ -45,10 +45,10 @@ textarea {
     border-radius: 0px;
 }
 
-.yak{
+.yak {
     margin-left: 30px;
     border-radius: 3px;
-
+}
 
 
 /*FAQ CSS*/
@@ -85,5 +85,71 @@ textarea {
     text-align:center;
   
 }
+
+
+/* Yak Post CSS*/
+
+.postTitle {
+    text-align: center;
+    color: mediumpurple;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.modalSize {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.textBox {
+    height: 300px;
+    width: 100%;
+}
+
+.textBox textarea {
+    height: 100%;
+}
+
+
+.modal-footer h3 {
+    text-align: center;
+}
+
+.postCancel {
+    float: right;
+}
+
+.postButton {
+    margin-top: 5%;
+    background-color: white;
+    border: 1px solid black;
+    color: rebeccapurple;
+}
+
+.postButton:hover, .postButton:active, 
+.postButton:visited, .postButton:default {
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    color: white;
+}
+
+.modal-backdrop
+{
+    opacity:0.8;
+}
+
+ #PostModal .close {
+    margin-left: 5%;
+    background-color: white;
+    color: mediumpurple;
+    opacity: 1.0;
+}
+
+ #PostModal .close:hover {
+     color: rebeccapurple;
+ }
+
 
 
