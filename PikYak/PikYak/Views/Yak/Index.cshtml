@@ -1,10 +1,21 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    var yaks = new List<PikYak.Models.Yak>();
+    yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = "Here's a Really long Yak that fills multiple lines because it is so long and has so many characters. More characters, in fact, than are actu",
+        Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = "I still have no idea what I'm doing", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = " ", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+
 }
 
+@{ 
+    foreach (var yak in yaks)
+    {
+        Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yak);
+    }
+}
 
-<h2>Yaks</h2>
-
-@Html.Partial("~/Views/Yak/YaksPartial.cshtml");
 
