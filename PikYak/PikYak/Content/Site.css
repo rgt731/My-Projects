@@ -50,6 +50,24 @@ textarea {
     border-radius: 3px;
 }
 
+.yak img{
+    max-width: 100%;
+
+}
+
+.yak a{
+    font-size: 2em;
+}
+
+.yak p {
+        font-size: 18px;
+        text-align: center;       
+}
+
+
+
+
+
 
 /*FAQ CSS*/
 
@@ -61,25 +79,22 @@ textarea {
 
 /*CSS for button toggles*/
 #accordion .highlight {
-	background:cornflowerblue;
 	transition:background 2s ease;
 }
+
 
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-    float: right;        /* adjust as needed */
-    color: orange;         /* adjust as needed */
+    content: "\2b";    /* toggle icon " + " */
+    float: right;        /* position of toggle icons */
+    color: red;         /* Color for toggle icons */
 }
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
-    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    content: "\2212";    /* toggle icon " - "  */
 }
 
-.accordion-toggle:hover {
-	text-decoration: none;
-}
 
 .headerImg{
     text-align:center;
@@ -152,4 +167,13 @@ textarea {
  }
 
 
+
+
+/* Search */
+
+.buttons {
+
+}
+
+/* END Search */
 
