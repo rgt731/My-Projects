@@ -17,6 +17,6 @@ namespace PikYak.Models
 
         public double Longitude { get; set; }
 
-        //public int LikeCount { get; set; }
+        public int LikeCount { get; set; }
     }
 }

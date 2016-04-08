@@ -1,4 +1,5 @@
 ﻿using System;
+using PikYak.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,10 @@ namespace PikYak.Controllers
 {
     public class YakController : Controller
     {
+        //we can access list of likes
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+
         // GET: Yak
         public ActionResult Index()
         {
