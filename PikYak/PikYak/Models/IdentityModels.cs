@@ -25,6 +25,11 @@ namespace PikYak.Models
         {
         }
 
+        //set a table of likes - list of likes
+        //property
+        public DbSet<Like> Likes { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
