@@ -9,9 +9,8 @@ namespace PikYak.Controllers
 {
     public class YakController : Controller
     {
-        //we can access list of likes
+        //we can access list all likes, yaks, etc
         private ApplicationDbContext db = new ApplicationDbContext();
-
 
         // GET: Yak
         public ActionResult Index()
@@ -36,9 +35,39 @@ namespace PikYak.Controllers
 
         public ActionResult Like(string YakId)
         {
-            Console.WriteLine("You liked a Yak" + YakId); 
+            if (YakId != null)
+            { 
 
-            return RedirectToAction("Index"); 
+            //changes from a string to a number
+            int num = Int32.Parse(YakId);
+
+            //create new like
+            Like newLike = new Like(num);
+
+            //fill in the properties
+            //assign the date and time at this moment to the newLike item
+            newLike.Timestamp = DateTime.Now;
+
+            //save to db
+            db.Likes.Add(newLike);
+            db.SaveChanges();
+
+            Console.WriteLine("You liked a Yak" + YakId);
+
+            //redirect to action
+            return RedirectToAction("Index");
+            }
+
+            else{
+             
+             //Do something here if no likes have been added to table
+
+
+            Console.WriteLine("You liked a Yak" + YakId);
+
+            //redirect to action
+            return RedirectToAction("Index");
+           }
         }
     }
 }
