@@ -7,6 +7,7 @@ namespace PikYak.Models
 {
     public class Yak
     {
+        //this feels right to Dr. Casey
         public int Id { get; set; }
 
         public string Text { get; set; }
@@ -16,6 +17,7 @@ namespace PikYak.Models
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }
+
 
   
     }

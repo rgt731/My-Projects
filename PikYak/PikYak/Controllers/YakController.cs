@@ -1,4 +1,5 @@
 ﻿using System;
+//doesnt know what a Yak is -- this gets added(below)
 using PikYak.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace PikYak.Controllers
     public class YakController : Controller
     {
         //we can access list all likes, yaks, etc
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
 
         // GET: Yak
         public ActionResult Index()
@@ -37,13 +38,14 @@ namespace PikYak.Controllers
         public ActionResult Like(string YakId)
         {
             if (YakId != null)
-            { 
+            {
 
-            //changes from a string to a number
-            int num = Int32.Parse(YakId);
+                //changes from a string to a number
+                 //This isnt safe***
+                int num = Int32.Parse(YakId);
 
-            //create new like
-            var newLike = new Like(num);
+                //create new like     //Instaniate a new Like object
+                var newLike = new Like(num);
 
             //fill in the properties
             //assign the date and time at this moment to the newLike item

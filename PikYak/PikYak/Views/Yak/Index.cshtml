@@ -1,4 +1,5 @@
-﻿@model IEnumerable<PikYak.Models.Like>
+﻿<!--pass in a model to the view thqt is strongly typed-->
+@model IEnumerable<PikYak.Models.Like>
 
 @{
     ViewBag.Title = "Index";
@@ -27,13 +28,33 @@
     }
 }
    
-@{
-    foreach (var yak in Model)
+
+
+<div class="row">
+
+    <!--create as many panels as we have movies-->
+    @foreach (var yak in Model)
     {
-        @yak.Timestamp
-        @yak.UserId
-        @yak.YakId
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> User: @yak.UserId</h3>
+            </div>
+            <div class="panel-body">
+           
+                <p> Time: @yak.Timestamp</p>
+                <p>Yak ID:  @yak.YakId</p>
+            </div>
+            <div class="panel-footer">
+                <!--created a url thats is composed as such-->
+                <a href="/Home/Yak/Like/@yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>
+          
+
+            </div>
+        </div>
     }
-}
+</div>
+
+
 
 

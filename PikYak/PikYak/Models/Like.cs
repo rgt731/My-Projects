@@ -14,12 +14,14 @@ namespace PikYak.Models
             Number = number;
         }
     
-        //generaically a number
-        //data that we are modeling 
-        public int Number { get; set; }
+        
 
         //because this feels right to be first
         public int Id { get; set; }
+
+        //generaically a number
+        //data that we are modeling 
+        public int Number { get; set; }
 
         public DateTime Timestamp { get; set; }
 
