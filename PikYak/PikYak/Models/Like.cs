@@ -13,7 +13,7 @@ namespace PikYak.Models
             //set intial value to Number
             Number = number;
         }
-
+    
         //generaically a number
         //data that we are modeling 
         public int Number { get; set; }

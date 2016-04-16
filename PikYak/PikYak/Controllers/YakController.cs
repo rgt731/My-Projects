@@ -15,7 +15,8 @@ namespace PikYak.Controllers
         // GET: Yak
         public ActionResult Index()
         {
-            return View();
+            var yaks = db.Yaks.ToList();    
+            return View(yaks);
         }
 
         public ActionResult Faq()
@@ -42,17 +43,18 @@ namespace PikYak.Controllers
             int num = Int32.Parse(YakId);
 
             //create new like
-            Like newLike = new Like(num);
+            var newLike = new Like(num);
 
             //fill in the properties
             //assign the date and time at this moment to the newLike item
+
             newLike.Timestamp = DateTime.Now;
 
             //save to db
             db.Likes.Add(newLike);
             db.SaveChanges();
 
-            Console.WriteLine("You liked a Yak" + YakId);
+           // Console.WriteLine("You liked a Yak" + YakId);
 
             //redirect to action
             return RedirectToAction("Index");
@@ -61,9 +63,6 @@ namespace PikYak.Controllers
             else{
              
              //Do something here if no likes have been added to table
-
-
-            Console.WriteLine("You liked a Yak" + YakId);
 
             //redirect to action
             return RedirectToAction("Index");
