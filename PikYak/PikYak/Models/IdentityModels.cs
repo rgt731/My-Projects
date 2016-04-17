@@ -25,9 +25,14 @@ namespace PikYak.Models
         {
         }
 
-        //set a table of likes - list of likes
-        //property
+        //set a table of likes - list of likes //Translate Likes to be stored in the database
+        //property - prularized form of this object
         public DbSet<Like> Likes { get; set; }
+
+        //include a set of yaks - dbset of type yak will tell intity framework to create a table of yaks
+        //set a table of yaks - list of yaks //Translate Yaks to be stored in the database
+        //property - prularized form of this object
+        public DbSet<Yak> Yaks { get; set; }
 
 
         public static ApplicationDbContext Create()

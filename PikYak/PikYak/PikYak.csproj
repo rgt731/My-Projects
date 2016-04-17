@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201604080248056_InitialLikeSchema.Designer.cs">
       <DependentUpon>201604080248056_InitialLikeSchema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604162205267_YakLikeMigration.cs" />
+    <Compile Include="Migrations\201604162205267_YakLikeMigration.Designer.cs">
+      <DependentUpon>201604162205267_YakLikeMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -279,6 +283,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604080248056_InitialLikeSchema.resx">
       <DependentUpon>201604080248056_InitialLikeSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604162205267_YakLikeMigration.resx">
+      <DependentUpon>201604162205267_YakLikeMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
