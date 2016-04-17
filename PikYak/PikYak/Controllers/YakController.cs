@@ -68,6 +68,7 @@ namespace PikYak.Controllers
              
              //Do something here if no likes have been added to table
 
+
             //redirect to action
             return RedirectToAction("Index");
            }
