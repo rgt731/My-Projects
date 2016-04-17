@@ -10,7 +10,8 @@ namespace PikYak.Controllers
 {
     public class YakController : Controller
     {
-        //we can access list all likes, yaks, etc
+        //we can access/view list all likes, yaks, etc
+
         private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
 
         // GET: Yak
@@ -40,12 +41,13 @@ namespace PikYak.Controllers
             if (YakId != null)
             {
 
-                //changes from a string to a number
-                 //This isnt safe***
-                int num = Int32.Parse(YakId);
 
-                //create new like     //Instaniate a new Like object
-                var newLike = new Like(num);
+            //changes from a string to a number
+            //This isnt safe***
+            int num = Int32.Parse(YakId);
+
+            //create new like     //Instaniate a new Like object
+            var newLike = new Like(num);
 
             //fill in the properties
             //assign the date and time at this moment to the newLike item

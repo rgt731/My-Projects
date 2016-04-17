@@ -4,6 +4,8 @@ namespace PikYak.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    //important - didn't know what a movie was, had to add this
+    using PikYak.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PikYak.Models.ApplicationDbContext>
     {
@@ -19,13 +21,14 @@ namespace PikYak.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                context.Yaks.AddOrUpdate(
+                  p => p.Id,
+                  new Yak { Text = "This is my first yak, its super positive", Latitude = 69, Longitude = 102, Positivity = 99, Timestamp = DateTime.Now  },
+                  new Yak { Text = "This is my second yak, its somewhat positive", Latitude = 87, Longitude = 304, Positivity = 55, Timestamp = DateTime.Now },
+                  new Yak { Text = "This is my third yak, its a little positive", Latitude = 17, Longitude = 44, Positivity = 17, Timestamp = DateTime.Now }
+                  
+                );
+            
         }
     }
 }

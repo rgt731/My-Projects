@@ -15,7 +15,6 @@ namespace PikYak.Models
         }
     
         
-
         //because this feels right to be first
         public int Id { get; set; }
 

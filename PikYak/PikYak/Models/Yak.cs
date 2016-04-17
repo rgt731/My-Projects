@@ -18,6 +18,11 @@ namespace PikYak.Models
 
         public double Longitude { get; set; }
 
+        public double Positivity { get; set; }
+
+        public string PictureURL { get; set; }
+
+        public int ReplyToYakId { get; set; }
 
   
     }

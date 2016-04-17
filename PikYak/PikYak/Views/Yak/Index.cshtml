@@ -1,17 +1,20 @@
 ﻿<!--pass in a model to the view thqt is strongly typed-->
-@model IEnumerable<PikYak.Models.Like>
+<!--model IEnumerable<PikYak.Models.Like>-->
+
+<!--model IEnumerable<PikYak.Models.Yak>-->
+  @model IList<PikYak.Models.Yak>
 
 @{
     ViewBag.Title = "Index";
-    var yaks = new List<PikYak.Models.Yak>();
+    /*var yaks = new List<PikYak.Models.Yak>();
 
-    yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now, Id = 4 });
     yaks.Add(new PikYak.Models.Yak { Text = "Here's a Really long Yak that fills multiple lines because it is so long and has so many characters. More characters, in fact, than are actu",
-        Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+        Latitude = 2, Longitude = 3, Timestamp = DateTime.Now,Id = 4});
 
     yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
     yaks.Add(new PikYak.Models.Yak { Text = "I still have no idea what I'm doing", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
-    yaks.Add(new PikYak.Models.Yak { Text = " ", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
+    yaks.Add(new PikYak.Models.Yak { Text = " ", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });*/
 
 }
 
@@ -22,7 +25,7 @@
 </div>
 
 @{ 
-    foreach (var yak in yaks)
+    foreach (var yak in Model)
     {
         Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yak);
     }
@@ -30,30 +33,48 @@
    
 
 
+<!--This was a test row, it should really be layed out in the above html,
+     and what gets printed out should be in the partial view...-->
+<!---
 <div class="row">
 
-    <!--create as many panels as we have movies-->
-    @foreach (var yak in Model)
+    <!--create as many panels as we have movies--
+    foreach (var yak in Model)
+
     {
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"> User: @yak.UserId</h3>
+                <h3 class="panel-title"> User: yak.Id</h3>
             </div>
             <div class="panel-body">
            
-                <p> Time: @yak.Timestamp</p>
-                <p>Yak ID:  @yak.YakId</p>
+                <p> Time: yak.Timestamp</p>
+                <p>Yak ID:  yak.Id</p>
             </div>
             <div class="panel-footer">
-                <!--created a url thats is composed as such-->
-                <a href="/Home/Yak/Like/@yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>
+                <!--created a url thats is composed as such--
+                <a href="/Home/Yak/Like/yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>
+
+                <h3 class="panel-title"> User: yak.Id</h3>
+            </div>
+            <div class="panel-body">
+           
+                <p> Time: yak.Timestamp</p>
+                <p>Yak ID:  yak.Positivity</p>
+                <p>Yak Text:  yak.Text</p>
+            </div>
+            <div class="panel-footer">
+                <!--created a url thats is composed as such--
+               <!-- <a href="/Home/Yak/Like/yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>--
+                (yak.Longitude,yak.Latitude)
           
 
             </div>
         </div>
     }
-</div>
+
+</div>-->
 
 
 
