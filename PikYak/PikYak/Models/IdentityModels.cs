@@ -25,7 +25,8 @@ namespace PikYak.Models
         {
         }
 
-        //set a table of likes - list of likes //Translate Likes to be stored in the database
+
+        //set a table of yaks - list of yaks //Translate Yaks to be stored in the database
         //property - prularized form of this object
         public DbSet<Like> Likes { get; set; }
 

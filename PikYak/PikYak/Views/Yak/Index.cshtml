@@ -1,6 +1,8 @@
 <!--pass in a model to the view thqt is strongly typed-->
+<!--model IEnumerable<PikYak.Models.Like>-->
+
 <!--model IEnumerable<PikYak.Models.Yak>-->
-@model IList<PikYak.Models.Yak>
+  @model IList<PikYak.Models.Yak>
 
 @{
     ViewBag.Title = "Index";
@@ -30,15 +32,30 @@
 }
    
 
-<!--
+
+<!--This was a test row, it should really be layed out in the above html,
+     and what gets printed out should be in the partial view...-->
+<!---
 <div class="row">
 
     <!--create as many panels as we have movies--
     foreach (var yak in Model)
+
     {
 
         <div class="panel panel-default">
             <div class="panel-heading">
+                <h3 class="panel-title"> User: yak.Id</h3>
+            </div>
+            <div class="panel-body">
+           
+                <p> Time: yak.Timestamp</p>
+                <p>Yak ID:  yak.Id</p>
+            </div>
+            <div class="panel-footer">
+                <!--created a url thats is composed as such--
+                <a href="/Home/Yak/Like/yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>
+
                 <h3 class="panel-title"> User: yak.Id</h3>
             </div>
             <div class="panel-body">
@@ -49,13 +66,14 @@
             </div>
             <div class="panel-footer">
                 <!--created a url thats is composed as such--
-               <!-- <a href="/Home/Yak/Like/yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>-
+               <!-- <a href="/Home/Yak/Like/yak.Id" class="glyphicon glyphicon-heart-empty"> Like Button</a>--
                 (yak.Longitude,yak.Latitude)
           
 
             </div>
         </div>
     }
+
 </div>-->
 
 

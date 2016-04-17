@@ -11,6 +11,7 @@ namespace PikYak.Controllers
     public class YakController : Controller
     {
         //we can access/view list all likes, yaks, etc
+
         private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
 
         // GET: Yak
@@ -40,6 +41,7 @@ namespace PikYak.Controllers
             if (YakId != null)
             {
 
+
             //changes from a string to a number
             //This isnt safe***
             int num = Int32.Parse(YakId);
@@ -65,7 +67,6 @@ namespace PikYak.Controllers
             else{
              
              //Do something here if no likes have been added to table
-
 
 
             //redirect to action
