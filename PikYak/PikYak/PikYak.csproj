@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201604162205267_YakLikeMigration.Designer.cs">
       <DependentUpon>201604162205267_YakLikeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604180048465_LikeMigration.cs" />
+    <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
+      <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -286,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604162205267_YakLikeMigration.resx">
       <DependentUpon>201604162205267_YakLikeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
+      <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
