@@ -1,3 +1,4 @@
+﻿
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -87,3 +88,195 @@ textarea {
 }
 
 /* END Search */
+
+
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: mediumpurple;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.footer{
+    width: 140px;
+    margin: 0px auto;
+    font-weight: bold;
+}
+
+.rightTab{
+    border-radius: 5px;
+    float: right;
+    margin-top: 10px;
+}
+
+.form-control{
+    border-radius: 0px;
+}
+
+.searchButt{
+    border-radius: 0px;
+}
+
+.yak {
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+.yak img{
+    max-width: 100%;
+
+}
+
+.yak a{
+    font-size: 2em;
+}
+
+.yak p {
+        font-size: 18px;
+        text-align: center;       
+}
+
+
+
+
+
+
+/*FAQ CSS*/
+
+.topicContainer{
+
+    text-align:center; 
+    padding-top:3em; 
+}
+
+
+
+/*CSS for button toggles*/
+#accordion .highlight,
+#accordion2 .highlight,
+#accordion3 .highlight,
+#accordion4 .highlight,
+#accordion5 .highlight,
+#accordion6 .highlight  {
+	transition:background 1.25s ease;
+}
+
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\2b";    /* toggle icon " + " */
+    float: right;        /* position of toggle icons */
+    color: red;         /* Color for toggle icons */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\2212";    /* toggle icon " - "  */
+}
+
+
+.headerImg{
+    text-align:center;
+  
+}
+
+
+/* Yak Post CSS*/
+
+.postTitle {
+    text-align: center;
+    color: mediumpurple;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.modalSize {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.textBox {
+    height: 300px;
+    width: 100%;
+}
+
+.textBox textarea {
+    height: 100%;
+}
+
+
+
+.modal-footer h3 {
+    text-align: center;
+}
+
+
+.postCancel {
+    float: right;
+}
+
+.postButton {
+    margin-top: 5%;
+    background-color: white;
+    border: 1px solid black;
+    color: rebeccapurple;
+}
+
+
+.postButton:hover, .postButton:active, 
+.postButton:visited, .postButton:default {
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    color: white;
+}
+
+.modal-backdrop
+{
+    opacity:0.8;
+}
+
+ 
+#PostModal .close {
+    margin-left: 5%;
+    background-color: white;
+    color: mediumpurple;
+    opacity: 1.0;
+}
+
+ #PostModal .close:hover {
+     color: rebeccapurple;
+ }
+
+
+
+
+/* Search */
+
+.buttons {
+
+}
+
+/* END Search */
+

@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -24,6 +24,11 @@ namespace PikYak.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        //set a table of likes - list of likes
+        //property
+        public DbSet<Like> Likes { get; set; }
+
 
         public static ApplicationDbContext Create()
         {
