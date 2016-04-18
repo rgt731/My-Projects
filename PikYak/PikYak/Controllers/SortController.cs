@@ -27,11 +27,7 @@ namespace PikYak.Controllers
 
             var yak = from s in db.PikYak
                            select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                yak = yak.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
-                                       || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
-            }
+
             switch (sortOrder)
             {
                 case "yak desc":
@@ -44,7 +40,7 @@ namespace PikYak.Controllers
                     yak = yak.OrderByDescending(s => s.PostDate);
                     break;
             }
-            int pageSize = 4;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(yak.ToPagedList(pageNumber, pageSize));
         }
