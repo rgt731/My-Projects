@@ -26,6 +26,7 @@
                         <p>
                             @Model.Text
                         </p>
+                        <p>@Model.Id</p>
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -39,7 +40,7 @@
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <!--Like button-->
-                                    <a href="/Yak/Like/@Model.Id" class="yakbutton like-button">
+                                    <a href="/Yak/Like/yakId=@Model.Id" class="yakbutton like-button">
                                         <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
                                     </a>
                                 </div>

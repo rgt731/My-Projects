@@ -28,7 +28,17 @@ namespace PikYak.Migrations
                   new Yak { Text = "This is my third yak, its a little positive", Latitude = 17, Longitude = 44, Positivity = 17, Timestamp = DateTime.Now }
                   
                 );
-            
+               
+                /*seed method for likes?...maybe?*/
+                context.Likes.AddOrUpdate(
+                 l => l.Id,
+                 new Like(12) { UserId = "Bruce Wayne",YakId = "10", Number = 3, Timestamp = DateTime.Now,  },
+                 new Like(8) { UserId = "Clark Kent", YakId = "7", Number = 7, Timestamp = DateTime.Now, },
+                 new Like(0) { UserId = "Louis Lane", YakId = "5", Number = 4, Timestamp = DateTime.Now, }
+
+
+               );
+
         }
     }
 }
