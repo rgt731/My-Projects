@@ -170,6 +170,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SortController.cs" />
     <Compile Include="Controllers\YakController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +244,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Search\" />
+    <Folder Include="Views\Sort\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

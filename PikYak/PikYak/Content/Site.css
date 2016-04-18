@@ -82,8 +82,8 @@ textarea {
 
 /* Search */
 
-.buttons {
-
+#searchContainer {
+   background-color: white;
 }
 
 /* END Search */
