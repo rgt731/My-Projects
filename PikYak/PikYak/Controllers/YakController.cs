@@ -39,6 +39,12 @@ namespace PikYak.Controllers
         public ActionResult Like(string yakId)
         {
 
+<<<<<<< HEAD
+=======
+            foreach(Like in YakId){
+                likeCount++; 
+            }*/
+>>>>>>> refs/remotes/origin/Like
 
             if (yakId != null)
             {
@@ -65,6 +71,7 @@ namespace PikYak.Controllers
             db.Likes.Add(newLike);
             db.SaveChanges();
 
+            
            // Console.WriteLine("You liked a Yak" + YakId);
 
             //redirect to action
