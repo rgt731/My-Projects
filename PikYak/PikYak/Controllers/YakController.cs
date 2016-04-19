@@ -40,7 +40,7 @@ namespace PikYak.Controllers
         {
            /* int likeCount = 0; 
 
-            foreach(Like in Yak){
+            foreach(Like in YakId){
                 likeCount++; 
             }*/
 
@@ -67,6 +67,7 @@ namespace PikYak.Controllers
             db.Likes.Add(newLike);
             db.SaveChanges();
 
+            
            // Console.WriteLine("You liked a Yak" + YakId);
 
             //redirect to action
