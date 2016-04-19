@@ -2,28 +2,31 @@
 
 
 
-
     <div class="row flex">
         <div class="col-md-8 col-sm-offset-2">
             <div class="panel panel-primary yak">
                 <div class="panel-heading">
                     <div class="container-fluid panel-container">
-                        <div class="col-xs-6 text-left">
+                        <div class="col-xs-4 text-left">
                             {@Model.Latitude, @Model.Longitude}
                         </div>
-                        <div class="col-xs-6 text-right">
+                        <div class="col-xs-4 text-center">
+                            @Model.Positivity
+                        </div>
+                        <div class="col-xs-4 text-right">
                             @Model.Timestamp
                         </div>
                     </div>
                 </div>
                 <div class="panel-body">
                     <div class="col-xs-3 text-left">
-                        <img src="~/Content/Images/TestGlyphIcon.png" />
+                        <img src="~/Content/Images/TestGlyphIcon.png"/>
                     </div>
                     <div class="col-xs-9">
                         <p>
                             @Model.Text
                         </p>
+                        <p>@Model.Id</p>
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -37,7 +40,7 @@
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <!--Like button-->
-                                    <a href="~/Yak/Like/@Model.Id" class="yakbutton like-button">
+                                    <a href="/Yak/Like/yakId=@Model.Id" class="yakbutton like-button">
                                         <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
                                     </a>
                                 </div>
