@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<PikYak.Models.Yak>
+
 @{
     ViewBag.Title = "Search";
 }
@@ -13,7 +14,16 @@
         <button type="button" class="btn btn-primary btn-lg">Time</button>
     </div>
 
-    <div id="searchResults"> </div>
+    <div id="searchResults">
+        
+        @{
+            foreach (var yak in Model)
+            {
+                Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yak);
+            }
+        }
+         
+    </div>
 
 </div>
 

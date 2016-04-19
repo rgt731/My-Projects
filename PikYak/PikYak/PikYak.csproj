@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\LikesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SortController.cs" />
     <Compile Include="Controllers\YakController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +187,10 @@
     <Compile Include="Migrations\201604180048465_LikeMigration.cs" />
     <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604182146348_test.cs" />
+    <Compile Include="Migrations\201604182146348_test.Designer.cs">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,7 +277,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -293,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604182146348_test.resx">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

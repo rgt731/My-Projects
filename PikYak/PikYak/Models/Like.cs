@@ -7,6 +7,11 @@ namespace PikYak.Models
 {
     public class Like
     {
+        public Like()
+        {
+            Number = 0;
+        }
+
         //create a convience constructor
         public Like(int number)
         {
