@@ -77,8 +77,13 @@ textarea {
 }
 
 /*CSS for button toggles*/
-#accordion .highlight {
-	transition:background 2s ease;
+#accordion .highlight,
+#accordion2 .highlight,
+#accordion3 .highlight,
+#accordion4 .highlight,
+#accordion5 .highlight,
+#accordion6 .highlight  {
+	transition:background 1.25s ease;
 }
 
 
