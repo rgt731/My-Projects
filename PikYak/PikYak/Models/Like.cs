@@ -7,26 +7,28 @@ namespace PikYak.Models
 {
     public class Like
     {
+
+        public Like()
+        {
+           
+        }
+
         //create a convience constructor
-        public Like(int number)
+        public Like(int yakId)
         {
             //set intial value to Number
-            Number = number;
+            YakId = yakId;
         }
     
         
         //because this feels right to be first
         public int Id { get; set; }
 
-        //generaically a number
-        //data that we are modeling 
-        public int Number { get; set; }
-
         public DateTime Timestamp { get; set; }
 
         public string UserId { get; set; }
 
-        public string YakId { get; set; }
+        public int YakId { get; set; }
 
     }
 }
