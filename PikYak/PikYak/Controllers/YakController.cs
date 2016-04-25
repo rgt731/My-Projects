@@ -17,19 +17,9 @@ namespace PikYak.Controllers
         // GET: Yak
         public ActionResult Index()
         {
-            var yaks = db.Yaks.ToList();
-            var yakViewModels = new List<YakViewModel>();
+           
 
-            foreach(var y in yaks)
-            {
-
-                var yvm = new YakViewModel() { Yak = y };
-                yakViewModels.Add(yvm);
-
-            }
-             
-
-            return View(yakViewModels);
+            return View(getYakViewModel());
         }
 
         public ActionResult Faq()
@@ -88,7 +78,7 @@ namespace PikYak.Controllers
         private List<YakViewModel> GenerateLikeViewModels()
         {
             //create a new list of likes
-            var likeViewModels = new List<YakViewModel>();
+            var yakViewModels = new List<YakViewModel>();
 
             var likeCounts = from l in db.Likes
 
@@ -106,19 +96,79 @@ namespace PikYak.Controllers
 
             foreach (var y in yaks)
             {
-                var lvm = new YakViewModel() { Yak = y };
+                var yvm = new YakViewModel() { Yak = y };
                 //tier 1
                 if (likeCounts.Where(lc => lc.YakId == y.Id).Count() > 0)
                 {
-                    lvm.LikeCount = likeCounts.Where(tc => tc.YakId == y.Id).First().Count;
+                    yvm.LikeCount = likeCounts.Where(lc => lc.YakId == y.Id).First().Count;
                 }
                 else
                 {
-                    lvm.LikeCount = 0;
+                    yvm.LikeCount = 0;
                 }
+                yakViewModels.Add(yvm);
             }
             
-                return likeViewModels;
+                return yakViewModels;
+        }
+
+        /*public List<YakViewModel> getLikeCount()
+        {
+            var yakViewModels = new List<YakViewModel>();
+
+            var likeCounts =  from c in db.Likes
+                            group c by c.YakId into grouping
+                            select new
+                            {
+                                LikeId = grouping.Key,
+                                Count = grouping.Count()
+                            };
+                            
+
+
+
+          return likeCounts;
+        }*/
+
+        //get like view models function
+       public List<YakViewModel> getYakViewModel()
+        {
+
+            var yaks = db.Yaks.ToList();
+            var yakViewModels = new List<YakViewModel>();
+
+            //Get Like Count
+            var likeCounts = from c in db.Likes
+                             group c by c.YakId into grouping
+                             select new
+                             {
+                                 LikeId = grouping.Key,
+                                 Count = grouping.Count()
+                             };//Finish Like Count
+
+
+
+            foreach (var y in yaks)
+            {
+
+                var yvm = new YakViewModel() { Yak = y };
+                //for each y.Id how likes are in this table
+                // getLikeCount(); 
+                if (likeCounts.Where(lc => lc.LikeId == y.Id).Count() > 0)
+                {
+                    yvm.LikeCount = likeCounts.Where(yc => yc.LikeId == y.Id).First().Count;
+                }
+                else
+                {
+                    yvm.LikeCount = 0;
+                }
+                yakViewModels.Add(yvm);
+
+            }
+
+            return yakViewModels; 
+
         }
     }
 }
+
