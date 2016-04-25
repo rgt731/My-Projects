@@ -195,6 +195,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\YakViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Yak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

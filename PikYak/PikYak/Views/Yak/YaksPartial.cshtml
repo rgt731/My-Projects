@@ -1,4 +1,4 @@
-﻿@model PikYak.Models.Yak
+﻿@model PikYak.Models.YakViewModel
 
 
 
@@ -26,7 +26,7 @@
                         <p>
                             @Model.Text
                         </p>
-                        <p class="pull-left">User Name: @Model.Id</p>
+                        <p class="pull-left">User Name: @yvm.Model.Id</p>
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -40,8 +40,8 @@
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <!--Like button-->
-                                    <a href="/Yak/Like?yakId=@Model.Id" class="yakbutton like-button">
-                                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                                    <a href="/Yak/Like?yakId=@yvm.Model.Id" class="yakbutton like-button">
+                                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">(@Model.LikeCount)</span>
                                     </a>
                                 </div>
                                 <div class="col-xs-4 text-right">
