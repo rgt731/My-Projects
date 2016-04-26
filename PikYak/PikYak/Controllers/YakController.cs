@@ -74,14 +74,21 @@ namespace PikYak.Controllers
           
             if (yakId != null)
             {
-            
-            //Do checking here with try parse
-            //to make sure yakId is a number
+                int number;
 
-            //changes from a string to a number
-            //This isnt safe***
+                //Do checking here with try parse
+                //to make sure yakId is a number
+
+                //changes from a string to a number
+                //This isnt safe***
+
+                // int yakNumber = Int32.Parse(yakId);
+                 bool result = Int32.TryParse(yakId, out number);
+
+            if (result)
+            {
+
             int yakNumber = Int32.Parse(yakId);
-
             //create new like     //Instaniate a new Like object- object that will get saved into the database
             var newLike = new Like();
 
@@ -94,10 +101,15 @@ namespace PikYak.Controllers
             //save to db
             db.Likes.Add(newLike);
             db.SaveChanges();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Sorry thatwas the wrong data type!";
+                }
 
 
-            //redirect to action
-            return RedirectToAction("Index");
+                //redirect to action
+                return RedirectToAction("Index");
             }
 
             else{
