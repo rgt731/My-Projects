@@ -1,4 +1,4 @@
-﻿@model PikYak.Models.Yak
+﻿@model PikYak.Models.YakViewModel
 
 
 
@@ -8,13 +8,13 @@
                 <div class="panel-heading">
                     <div class="container-fluid panel-container">
                         <div class="col-xs-4 text-left">
-                            {@Model.Latitude, @Model.Longitude}
+                            {@Model.Yak.Latitude, @Model.Yak.Longitude}
                         </div>
                         <div class="col-xs-4 text-center">
-                            @Model.Positivity% Positivity
+                            @Model.Yak.Positivity% Positivity
                         </div>
                         <div class="col-xs-4 text-right">
-                            @Model.Timestamp
+                            @Model.Yak.Timestamp
                         </div>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
                     </div>
                     <div class="col-xs-9">
                         <p>
-                            @Model.Text
+                            @Model.Yak.Text
                         </p>
-                        <p class="pull-left">User Name: @Model.Id</p>
+                        <p class="pull-left">User Name: @Model.Yak.Id</p>
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -40,8 +40,8 @@
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <!--Like button-->
-                                    <a href="/Yak/Like?yakId=@Model.Id" class="yakbutton like-button">
-                                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                                    <a href="/Yak/Like?yakId=@Model.Yak.Id" class="yakbutton like-button">
+                                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">(@Model.LikeCount)</span>
                                     </a>
                                 </div>
                                 <div class="col-xs-4 text-right">
