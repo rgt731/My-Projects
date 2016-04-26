@@ -38,8 +38,8 @@ namespace PikYak.Controllers
 
         public ActionResult Like(string yakId)
         {
-           /* foreach(Like in YakId){
-                likeCount++; */
+           /*foreach(Like in YakId){
+                likeCount++;*/
             
 
             if (yakId != null)
@@ -114,7 +114,7 @@ namespace PikYak.Controllers
                 return yakViewModels;
         }
 
-        /*public List<YakViewModel> getLikeCount()
+        public List<YakViewModel> getLikeCount()
         {
             var yakViewModels = new List<YakViewModel>();
 
@@ -130,7 +130,7 @@ namespace PikYak.Controllers
 
 
           return likeCounts;
-        }*/
+        }
 
         //get like view models function
        public List<YakViewModel> getYakViewModel()
