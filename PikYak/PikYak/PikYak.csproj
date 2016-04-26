@@ -187,10 +187,15 @@
     <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.cs" />
+    <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
+      <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\YakViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Yak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -297,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
+      <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
