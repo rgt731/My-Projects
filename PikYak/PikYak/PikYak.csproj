@@ -224,6 +224,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-material-design.css.map" />
+    <Content Include="Content\bootstrap-material-design.min.css.map" />
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
