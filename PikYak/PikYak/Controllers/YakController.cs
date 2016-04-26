@@ -30,7 +30,7 @@ namespace PikYak.Controllers
             return View();
         }
 
-        public ActionResult _YakPost(string text)
+        public ActionResult Post(string text)
         {
             
             return View();
