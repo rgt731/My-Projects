@@ -1,6 +1,6 @@
 <!--pass in a model to the view thqt is strongly typed-->
-<!--model IEnumerable<PikYak.Models.Yak>-->
-  @model IList<PikYak.Models.Yak>
+  @model IEnumerable<PikYak.Models.YakViewModel>
+  <!---model IList<PikYak.Models.Yak>-->
 
 @{
     ViewBag.Title = "Index";
@@ -13,19 +13,17 @@
     yaks.Add(new PikYak.Models.Yak { Text = "yakyakyakyak", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
     yaks.Add(new PikYak.Models.Yak { Text = "I still have no idea what I'm doing", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });
     yaks.Add(new PikYak.Models.Yak { Text = " ", Latitude = 2, Longitude = 3, Timestamp = DateTime.Now });*/
-
 }
 
 <div class="jumbotron">
     <h1>Welcome To PikYak</h1>
     <p class="lead">Sharing positivity all over the world!</p>
-
 </div>
 
 @{ 
-    foreach (var yak in Model)
+    foreach (var yvm in Model)
     {
-        Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yak);
+        Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yvm);
     }
 }
    
