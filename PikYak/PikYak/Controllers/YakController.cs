@@ -136,7 +136,7 @@ namespace PikYak.Controllers
        public List<YakViewModel> getYakViewModel()
         {
 
-            var yaks = db.Yaks.ToList();
+            
             var yakViewModels = new List<YakViewModel>();
 
             //Get Like Count
@@ -168,7 +168,7 @@ namespace PikYak.Controllers
 
             }
 
-            return yakViewModels; 
+            return yakViewModels;
 
         }
     }
