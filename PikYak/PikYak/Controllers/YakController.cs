@@ -12,13 +12,14 @@ namespace PikYak.Controllers
     {
         //we can access/view list all likes, yaks, etc
 
-        private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
         public ActionResult Index()
         {
-            var yaks = db.Yaks.ToList();    
-            return View(yaks);
+           
+
+            return View(getYakViewModel());
         }
 
         public ActionResult Faq()
@@ -35,69 +36,183 @@ namespace PikYak.Controllers
         {
             return View();
         }
+        // This should work for the search function.
+        /*public ActionResult Index(string id)
+
+        {
+
+            string searchString = id;
+            var yaks = from m in db.Yaks
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(yaks);
+        }*/
+        /*public ActionResult Like(string yakId)
 
         public ActionResult Like(string YakId)
         {
-           /* int likeCount = 0; 
+            string searchString = id;
+            var yaks = from y in db.Yaks
+                         select y;
 
-            foreach(Like in YakId){
-                likeCount++; 
-            }*/
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Text.Contains(searchString));
+            }
 
+            return View(yaks);
+        }*/
+        
 
-            if (YakId != null)
+        public ActionResult Like(string yakId)
+        {
+            if (yakId != null)
+
+            {
+                int number;
+
+                //Do checking here with try parse
+                //to make sure yakId is a number
+
+                //changes from a string to a number
+                //This isnt safe***
+
+                // int yakNumber = Int32.Parse(yakId);
+                 bool result = Int32.TryParse(yakId, out number);
+
+            if (result)
             {
 
-
-            //changes from a string to a number
-            //This isnt safe***
-            int num = Int32.Parse(YakId);
-
+            int yakNumber = Int32.Parse(yakId);
             //create new like     //Instaniate a new Like object- object that will get saved into the database
-            var newLike = new Like(num);
-
-           // newLike.UserId = Int32.Parse(YakId);
+            var newLike = new Like();
 
             //fill in the properties
             //assign the date and time at this moment to the newLike item
 
             newLike.Timestamp = DateTime.Now;
+            newLike.YakId = yakNumber; 
 
             //save to db
             db.Likes.Add(newLike);
             db.SaveChanges();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Sorry thatwas the wrong data type!";
+                }
 
-            
-           // Console.WriteLine("You liked a Yak" + YakId);
 
-            //redirect to action
-            return RedirectToAction("Index");
+                //redirect to action
+                return RedirectToAction("Index");
             }
 
             else{
-
-                //Do something here if no likes have been added to table
-
-                //changes from a string to a number
-                //This isnt safe***
-                int num =  1;
-
-                //create new like     //Instaniate a new Like object
-                var newLike = new Like(num);
-
-                //fill in the properties
-                //assign the date and time at this moment to the newLike item
-
-                newLike.Timestamp = DateTime.Now;
-
-                //save to db
-                db.Likes.Add(newLike);
-                db.SaveChanges();
-
 
                 //redirect to action
                 return RedirectToAction("Index");
            }
         }
+
+        private List<YakViewModel> GenerateLikeViewModels()
+        {
+            //create a new list of likes
+            var yakViewModels = new List<YakViewModel>();
+
+            var likeCounts = from l in db.Likes
+
+                                 // where l.
+
+                             group l by l.YakId into grouping
+                             select new
+                             {
+                                 YakId = grouping.Key,
+                                 Count = grouping.Count()
+                             };
+
+            //refer to this connection to the database
+            var yaks = db.Yaks.ToList();
+
+            foreach (var y in yaks)
+            {
+                var yvm = new YakViewModel() { Yak = y };
+                //tier 1
+                if (likeCounts.Where(lc => lc.YakId == y.Id).Count() > 0)
+                {
+                    yvm.LikeCount = likeCounts.Where(lc => lc.YakId == y.Id).First().Count;
+                }
+                else
+                {
+                    yvm.LikeCount = 0;
+                }
+                yakViewModels.Add(yvm);
+            }
+            
+                return yakViewModels;
+        }
+
+        /*public List<YakViewModel> getLikeCount()
+        {
+            var yakViewModels = new List<YakViewModel>();
+
+            var likeCounts =  from c in db.Likes
+                            group c by c.YakId into grouping
+                            select new
+                            {
+                                LikeId = grouping.Key,
+                                Count = grouping.Count()
+                            };
+                            
+
+
+
+          return likeCounts;
+        }*/
+
+        //get like view models function
+       public List<YakViewModel> getYakViewModel()
+        {
+
+            var yaks = db.Yaks.ToList();
+            var yakViewModels = new List<YakViewModel>();
+
+            //Get Like Count
+            var likeCounts = from c in db.Likes
+                             group c by c.YakId into grouping
+                             select new
+                             {
+                                 LikeId = grouping.Key,
+                                 Count = grouping.Count()
+                             };//Finish Like Count
+
+
+
+            foreach (var y in yaks)
+            {
+
+                var yvm = new YakViewModel() { Yak = y };
+                //for each y.Id how likes are in this table
+                // getLikeCount(); 
+                if (likeCounts.Where(lc => lc.LikeId == y.Id).Count() > 0)
+                {
+                    yvm.LikeCount = likeCounts.Where(yc => yc.LikeId == y.Id).First().Count;
+                }
+                else
+                {
+                    yvm.LikeCount = 0;
+                }
+                yakViewModels.Add(yvm);
+
+            }
+
+            return yakViewModels; 
+
+        }
     }
 }
+

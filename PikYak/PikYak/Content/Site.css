@@ -1,8 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-color: mediumpurple;
-}
+﻿
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -12,10 +8,10 @@
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
-*/
+
 .dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -24,7 +20,13 @@ textarea {
     max-width: 280px;
 }
 
+#postYakButton{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
 
+/*
 .footer{
     width: 140px;
     margin: 0px auto;
@@ -63,7 +65,7 @@ textarea {
         font-size: 18px;
         text-align: center;       
 }
-
+*/
 
 
 
