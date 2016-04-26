@@ -36,11 +36,11 @@ namespace PikYak.Controllers
         {
             return View();
         }
-
         // This should work for the search function.
         /*public ActionResult Index(string id)
 
         {
+
             string searchString = id;
             var yaks = from m in db.Yaks
                          select m;
@@ -52,8 +52,9 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        
-        /*public ActionResult Like(string YakId)
+        /*public ActionResult Like(string yakId)
+
+        public ActionResult Like(string YakId)
         {
             string searchString = id;
             var yaks = from y in db.Yaks
@@ -69,10 +70,9 @@ namespace PikYak.Controllers
         
 
         public ActionResult Like(string yakId)
-
         {
-          
             if (yakId != null)
+
             {
             
             //Do checking here with try parse
@@ -201,7 +201,6 @@ namespace PikYak.Controllers
             return yakViewModels; 
 
         }
-
     }
 }
 
