@@ -12,7 +12,7 @@ namespace PikYak.Controllers
     {
         //we can access/view list all likes, yaks, etc
 
-        private Models.ApplicationDbContext db = new Models.ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
         public ActionResult Index()
@@ -35,7 +35,7 @@ namespace PikYak.Controllers
         {
             return View();
         }
-
+        
         // This should work for the search function.
         /*public ActionResult Index(string id)
         {
@@ -53,23 +53,18 @@ namespace PikYak.Controllers
         
         public ActionResult Like(string YakId)
         {
-           /* int likeCount = 0; 
-
-            foreach(Like in Yak){
-                likeCount++; 
-            }*/
-
-
             if (YakId != null)
             {
-
+            
+            //Do checking here with try parse
+            //to make sure yakId is a number
 
             //changes from a string to a number
             //This isnt safe***
-            int num = Int32.Parse(YakId);
+            int yakNumber = Int32.Parse(YakId);
 
             //create new like     //Instaniate a new Like object- object that will get saved into the database
-            var newLike = new Like(num);
+            var newLike = new Like();
 
            // newLike.UserId = Int32.Parse(YakId);
 
@@ -77,11 +72,13 @@ namespace PikYak.Controllers
             //assign the date and time at this moment to the newLike item
 
             newLike.Timestamp = DateTime.Now;
+            newLike.YakId = yakNumber; 
 
             //save to db
             db.Likes.Add(newLike);
             db.SaveChanges();
 
+            
            // Console.WriteLine("You liked a Yak" + YakId);
 
             //redirect to action
@@ -92,21 +89,7 @@ namespace PikYak.Controllers
 
                 //Do something here if no likes have been added to table
 
-                //changes from a string to a number
-                //This isnt safe***
-                int num =  1;
-
-                //create new like     //Instaniate a new Like object
-                var newLike = new Like(num);
-
-                //fill in the properties
-                //assign the date and time at this moment to the newLike item
-
-                newLike.Timestamp = DateTime.Now;
-
-                //save to db
-                db.Likes.Add(newLike);
-                db.SaveChanges();
+               
 
 
                 //redirect to action
