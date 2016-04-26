@@ -17,8 +17,6 @@ namespace PikYak.Controllers
         // GET: Yak
         public ActionResult Index()
         {
-           
-
             return View(getYakViewModel());
         }
 
@@ -40,9 +38,9 @@ namespace PikYak.Controllers
 
         public ActionResult Like(string yakId)
         {
-            foreach(Like in YakId){
-                likeCount++; 
-            }
+           /* foreach(Like in YakId){
+                likeCount++; */
+            
 
             if (yakId != null)
             {
