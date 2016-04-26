@@ -39,6 +39,21 @@ namespace PikYak.Controllers
 
         // This should work for the search function.
         /*public ActionResult Index(string id)
+
+        {
+            string searchString = id;
+            var yaks = from m in db.Yaks
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(yaks);
+        }*/
+        
+        /*public ActionResult Like(string YakId)
         {
             string searchString = id;
             var yaks = from y in db.Yaks
@@ -186,6 +201,7 @@ namespace PikYak.Controllers
             return yakViewModels; 
 
         }
+
     }
 }
 

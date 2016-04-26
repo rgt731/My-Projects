@@ -6,10 +6,11 @@
     <link href="~/Content/bootstrap-material-design.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
-
     <title>@ViewBag.Title - PikYak Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="icon" type="image/png" href="~/Content/Images/favicon-32x32.png" />
 
     <!--<link rel="icon" type="image/png" href="~/Content/pik yak2.png" />-->
 
@@ -57,10 +58,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
+    
     <!-- Modal -->
     <div id="PostModal" class="modal fade modalSize" role="dialog">
         <div class="modal-dialog">
@@ -90,7 +88,9 @@
 
         </div>
     </div>
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
