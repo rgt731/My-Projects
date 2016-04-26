@@ -40,12 +40,11 @@ namespace PikYak.Controllers
         public ActionResult Like(string yakId)
         {
 
-<<<<<<< HEAD
-=======
-            foreach(Like in YakId){
+
+            /*foreach(Like in YakId){
                 likeCount++; 
             }*/
->>>>>>> refs/remotes/origin/Like
+
 
             if (yakId != null)
             {
