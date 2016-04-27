@@ -35,23 +35,60 @@ namespace PikYak.Controllers
             
             return View();
         }
+        // This should work for the search function.
+        /*public ActionResult Index(string id)
+
+        {
+
+            string searchString = id;
+            var yaks = from m in db.Yaks
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(yaks);
+        }*/
+        /*public ActionResult Like(string yakId)
+
+        public ActionResult Like(string YakId)
+        {
+            string searchString = id;
+            var yaks = from y in db.Yaks
+                         select y;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Text.Contains(searchString));
+            }
+
+            return View(yaks);
+        }*/
+        
 
         public ActionResult Like(string yakId)
         {
-           /*foreach(Like in YakId){
-                likeCount++;*/
-            
 
             if (yakId != null)
+
             {
-            
-            //Do checking here with try parse
-            //to make sure yakId is a number
+                int number;
 
-            //changes from a string to a number
-            //This isnt safe***
+                //Do checking here with try parse
+                //to make sure yakId is a number
+
+                //changes from a string to a number
+                //This isnt safe***
+
+                // int yakNumber = Int32.Parse(yakId);
+                 bool result = Int32.TryParse(yakId, out number);
+
+            if (result)
+            {
+
             int yakNumber = Int32.Parse(yakId);
-
             //create new like     //Instaniate a new Like object- object that will get saved into the database
             var newLike = new Like();
 
@@ -64,10 +101,15 @@ namespace PikYak.Controllers
             //save to db
             db.Likes.Add(newLike);
             db.SaveChanges();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Sorry thatwas the wrong data type!";
+                }
 
 
-            //redirect to action
-            return RedirectToAction("Index");
+                //redirect to action
+                return RedirectToAction("Index");
             }
 
             else{
