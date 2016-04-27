@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -191,21 +191,33 @@
     <Compile Include="Migrations\201604182146348_test.Designer.cs">
       <DependentUpon>201604182146348_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.cs" />
+    <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
+      <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\YakViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Yak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-material-design.css" />
+    <Content Include="Content\bootstrap-material-design.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\favicon-32x32.png" />
+    <Content Include="Content\Images\favicon.jpg" />
     <Content Include="Content\Images\TestGlyphIcon.png" />
+    <Content Include="Content\pik yak2.png" />
+    <Content Include="Content\ripples.css" />
+    <Content Include="Content\ripples.min.css" />
     <Content Include="Content\YakPostStyle.css" />
     <Content Include="Content\Images\faq-header2a.jpg" />
     <Content Include="Content\Images\faq-header.jpg" />
@@ -216,6 +228,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-material-design.css.map" />
+    <Content Include="Content\bootstrap-material-design.min.css.map" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Content\bootstrap-material-design.css.map" />
+    <Content Include="Content\bootstrap-material-design.min.css.map" />
+    <Content Include="Content\ripples.css.map" />
+    <Content Include="Content\ripples.min.css.map" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.2.js" />
     <Content Include="Scripts\jquery-2.2.2.min.js" />
@@ -224,11 +244,16 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\material.js" />
+    <Content Include="Scripts\material.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ripples.js" />
+    <Content Include="Scripts\ripples.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -271,6 +296,8 @@
     <Content Include="Views\Likes\Details.cshtml" />
     <Content Include="Views\Likes\Edit.cshtml" />
     <Content Include="Views\Likes\Index.cshtml" />
+    <Content Include="Scripts\material.min.js.map" />
+    <Content Include="Scripts\ripples.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,7 +329,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604182146348_test.resx">
       <DependentUpon>201604182146348_test.cs</DependentUpon>
-    </EmbeddedResource>
+      </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
+      <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+      </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -24,8 +24,5 @@ namespace PikYak.Models
 
         public int ReplyToYakId { get; set; }
 
-        public int likes { get; set; }
-
-
     }
 }
