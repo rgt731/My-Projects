@@ -52,11 +52,10 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        /*public ActionResult Like(string yakId)
-
-        public ActionResult Like(string YakId)
+        
+        public ActionResult Search(string yakId)
         {
-            string searchString = id;
+            string searchString = yakId;
             var yaks = from y in db.Yaks
                          select y;
 
@@ -66,7 +65,7 @@ namespace PikYak.Controllers
             }
 
             return View(yaks);
-        }*/
+        }
         
 
         public ActionResult Like(string yakId)
