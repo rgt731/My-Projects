@@ -30,9 +30,9 @@ namespace PikYak.Controllers
             return View();
         }
 
-        public ActionResult Post(string text)
+        [HttpPost]
+        public ActionResult Index(string yakMessage)
         {
-            
             return View();
         }
         // This should work for the search function.
@@ -66,8 +66,8 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        
 
+/*
         public ActionResult Like(string yakId)
         {
 
@@ -211,7 +211,7 @@ namespace PikYak.Controllers
             }
 
             return yakViewModels;
-
+            
         }
     }
 }
