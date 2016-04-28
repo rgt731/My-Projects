@@ -31,6 +31,14 @@ textarea {
 .colorTheme{
     background-color:#6A227D;
 }
+.panel.panel-primary > .panel-heading{
+    background-color:#6A227D;
+}
+
+
+.colorThemeColor{
+    color:#6A227D;
+}
 .footer{
     text-align: center;
     margin: 0px auto;
