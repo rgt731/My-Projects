@@ -85,26 +85,26 @@ namespace PikYak.Controllers
                 // int yakNumber = Int32.Parse(yakId);
                  bool result = Int32.TryParse(yakId, out number);
 
-            if (result)
-            {
+                    if (result)
+                    {
 
-            int yakNumber = Int32.Parse(yakId);
-            //create new like     //Instaniate a new Like object- object that will get saved into the database
-            var newLike = new Like();
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new like     //Instaniate a new Like object- object that will get saved into the database
+                    var newLike = new Like();
 
-            //fill in the properties
-            //assign the date and time at this moment to the newLike item
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
 
-            newLike.Timestamp = DateTime.Now;
-            newLike.YakId = yakNumber; 
+                    newLike.Timestamp = DateTime.Now;
+                    newLike.YakId = yakNumber; 
 
-            //save to db
-            db.Likes.Add(newLike);
-            db.SaveChanges();
+                    //save to db
+                    db.Likes.Add(newLike);
+                    db.SaveChanges();
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Sorry thatwas the wrong data type!";
+                    ViewBag.ErrorMessage = "Sorry that was the wrong data type!";
                 }
 
 
