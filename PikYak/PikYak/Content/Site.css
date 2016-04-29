@@ -21,18 +21,30 @@ textarea {
 }
 
 #postYakButton{
+    background-color: #6A227D;
+    color: white;
     position: fixed;
     bottom: 30px;
     right: 30px;
 }
 
-/*
+.colorTheme{
+    background-color:#6A227D;
+}
+.panel.panel-primary > .panel-heading{
+    background-color:#6A227D;
+}
+
+
+.colorThemeColor{
+    color:#6A227D;
+}
 .footer{
-    width: 140px;
+    text-align: center;
     margin: 0px auto;
     font-weight: bold;
 }
-
+/*
 .rightTab{
     border-radius: 5px;
     float: right;
