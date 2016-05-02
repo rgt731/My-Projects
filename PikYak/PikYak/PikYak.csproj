@@ -226,6 +226,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
     <Content Include="Content\bootstrap-material-design.min.css.map" />
+    <Content Include="Scripts\geolocation.js" />
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
@@ -250,6 +251,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ripples.js" />
     <Content Include="Scripts\ripples.min.js" />
+    <Content Include="Scripts\SentimentClient.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -16,6 +16,8 @@ namespace PikYak.Controllers
         // GET: Yak
         public ActionResult Index()
         {
+
+
             return View(getYakViewModel());
         }
 
@@ -29,8 +31,7 @@ namespace PikYak.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(string yakMessage)
+        public ActionResult YakPost()
         {
             return View();
         }
@@ -50,12 +51,12 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        
+
         public ActionResult Search(string yakId)
         {
             string searchString = yakId;
             var yaks = from y in db.Yaks
-                         select y;
+                       select y;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -63,45 +64,39 @@ namespace PikYak.Controllers
             }
 
             return View(yaks);
-
-        }*/
-
         }
-        
 
 
-/*
         public ActionResult Like(string yakId)
         {
-
             if (yakId != null)
 
             {
                 //Do checking here with try parse
                 //to make sure yakId is a number
                 int number;
-                
+
                 //changes from a string to a number
                 //This isnt safe***
                 // int yakNumber = Int32.Parse(yakId);
-                 bool result = Int32.TryParse(yakId, out number);
+                bool result = Int32.TryParse(yakId, out number);
 
                 if (result)
                 {
 
-                int yakNumber = Int32.Parse(yakId);
-                //create new like     //Instaniate a new Like object- object that will get saved into the database
-                var newLike = new Like();
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new like     //Instaniate a new Like object- object that will get saved into the database
+                    var newLike = new Like();
 
-                //fill in the properties
-                //assign the date and time at this moment to the newLike item
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
 
-                newLike.Timestamp = DateTime.Now;
-                newLike.YakId = yakNumber; 
+                    newLike.Timestamp = DateTime.Now;
+                    newLike.YakId = yakNumber;
 
-                //save to db
-                db.Likes.Add(newLike);
-                db.SaveChanges();
+                    //save to db
+                    db.Likes.Add(newLike);
+                    db.SaveChanges();
                 }
                 else
                 {
@@ -113,12 +108,13 @@ namespace PikYak.Controllers
                 return RedirectToAction("Index");
             }
 
-            else{
+            else
+            {
 
                 //redirect to action
                 //If YakId was null
                 return RedirectToAction("Index");
-           }
+            }
         }
 
         private List<YakViewModel> GenerateLikeViewModels()
@@ -154,8 +150,8 @@ namespace PikYak.Controllers
                 }
                 yakViewModels.Add(yvm);
             }
-            
-                return yakViewModels;
+
+            return yakViewModels;
         }
 
         /*public List<YakViewModel> getLikeCount()
@@ -177,10 +173,10 @@ namespace PikYak.Controllers
         }*/
 
         //get like view models function
-       public List<YakViewModel> getYakViewModel()
+        public List<YakViewModel> getYakViewModel()
         {
 
-            
+            var yaks = db.Yaks.ToList();
             var yakViewModels = new List<YakViewModel>();
 
             //Get Like Count
@@ -213,7 +209,7 @@ namespace PikYak.Controllers
             }
 
             return yakViewModels;
-            
+
         }
     }
 }
