@@ -13,7 +13,7 @@
     <title>@ViewBag.Title - PikYak Application</title>
     @Scripts.Render("~/bundles/modernizr")
 
-    <link rel="icon" type="image/png" href="~/Content/Images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="~/Content/Images/favicon.jpg" />
 
     <!--<link rel="icon" type="image/png" href="~/Content/pik yak2.png" />-->
 
@@ -29,11 +29,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("PIK YAK", "Index" , "Yak" , new { area="" }, new { @class="navbar-brand" })
+                Html.ActionLink("PIK YAK", "Index" , "Yak" , new { area="" }, new {class="navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("FAQ", "FAQ", "Yak")</li>
+                    <li>Html.ActionLink("FAQ", "FAQ", "Yak")</li>
                 </ul>
                 <button type="button" class="btn btn-default rightTab yak" data-toggle="modal" data-target="#PostModal">PikYak<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>     
                                
@@ -51,14 +51,19 @@
         </div>
     </div>-->
     <div class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid colorTheme">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
                 @Html.ActionLink("PIK YAK", "Index", "Yak", new { area = "" }, new { @class = "navbar-brand" })
+=======
+
+                <a class="navbar-brand" href="javascript:void(0)">PikYak</a>
+>>>>>>> origin/master
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
@@ -79,25 +84,23 @@
                             <li><a href="javascript:void(0)">One more separated link</a></li>
                         </ul>
                     </li>-->
+
+                <a class="navbar-brand" href="javascript:void(0)">Pik Yak</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="#"><a href="~/Views/Yak/Faq.cshtml">FAQ</a></li> 
                 </ul>
                 <form class="navbar-form navbar-right">
                     <div class="form-group is-empty">
-                        <input type="text" class="form-control col-md-8" placeholder="Search">
+                        <input type="text" class="form-control col-md-6" placeholder="Search">
                         <span class="material-input"></span>
                     </div>                              
                 </form>                
 
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <a href="#" id="postYakButton" class="btn btn-primary btn-fab" data-toggle="modal" data-target="#PostModal"><i class="material-icons">create</i></a>          
-        <hr />
-        <footer>
-            <p class="footer">&copy; @DateTime.Now.Year - PikYak.com</p>
-        </footer>
-    </div>
+    </div>    
 
     
     <!-- Modal -->
@@ -128,6 +131,14 @@
             </div>
 
         </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <a href="#" id="postYakButton" class="btn btn-default btn-fab" data-toggle="modal" data-target="#PostModal"><i class="material-icons">create</i></a>          
+        <hr />
+        <footer>
+            <p class="footer">&copy; @DateTime.Now.Year - PikYak.com</p>
+        </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
