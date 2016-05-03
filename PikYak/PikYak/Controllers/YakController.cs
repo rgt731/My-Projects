@@ -11,7 +11,6 @@ namespace PikYak.Controllers
     public class YakController : Controller
     {
         //we can access/view list all likes, yaks, etc
-
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
@@ -36,41 +35,83 @@ namespace PikYak.Controllers
         {
             return View();
         }
+        // This should work for the search function.
+        /*public ActionResult Index(string id)
+
+        {
+
+            string searchString = id;
+            var yaks = from m in db.Yaks
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(yaks);
+        }*/
+        
+        public ActionResult Search(string yakId)
+        {
+            string searchString = yakId;
+            var yaks = from y in db.Yaks
+                         select y;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                yaks = yaks.Where(s => s.Text.Contains(searchString));
+            }
+
+            return View(yaks);
+        }
+        
 
         public ActionResult Like(string yakId)
         {
-          
             if (yakId != null)
+
             {
-            
-            //Do checking here with try parse
-            //to make sure yakId is a number
+                //Do checking here with try parse
+                //to make sure yakId is a number
+                int number;
+                
+                //changes from a string to a number
+                //This isnt safe***
+                // int yakNumber = Int32.Parse(yakId);
+                 bool result = Int32.TryParse(yakId, out number);
 
-            //changes from a string to a number
-            //This isnt safe***
-            int yakNumber = Int32.Parse(yakId);
+                if (result)
+                {
 
-            //create new like     //Instaniate a new Like object- object that will get saved into the database
-            var newLike = new Like();
+                int yakNumber = Int32.Parse(yakId);
+                //create new like     //Instaniate a new Like object- object that will get saved into the database
+                var newLike = new Like();
 
-            //fill in the properties
-            //assign the date and time at this moment to the newLike item
+                //fill in the properties
+                //assign the date and time at this moment to the newLike item
 
-            newLike.Timestamp = DateTime.Now;
-            newLike.YakId = yakNumber; 
+                newLike.Timestamp = DateTime.Now;
+                newLike.YakId = yakNumber; 
 
-            //save to db
-            db.Likes.Add(newLike);
-            db.SaveChanges();
+                //save to db
+                db.Likes.Add(newLike);
+                db.SaveChanges();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
+                }
 
 
-            //redirect to action
-            return RedirectToAction("Index");
+                //redirect to action
+                return RedirectToAction("Index");
             }
 
             else{
 
                 //redirect to action
+                //If YakId was null
                 return RedirectToAction("Index");
            }
         }
@@ -97,7 +138,7 @@ namespace PikYak.Controllers
             foreach (var y in yaks)
             {
                 var yvm = new YakViewModel() { Yak = y };
-                //tier 1
+                //LikeCounts
                 if (likeCounts.Where(lc => lc.YakId == y.Id).Count() > 0)
                 {
                     yvm.LikeCount = likeCounts.Where(lc => lc.YakId == y.Id).First().Count;
