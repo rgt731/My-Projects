@@ -52,9 +52,8 @@ namespace PikYak.Controllers
             return View(yaks);
         }*/
         
-        public ActionResult Search(string yakId)
-        {
-            string searchString = yakId;
+        public ActionResult Search(string searchString)
+        {            
             var yaks = from y in db.Yaks
                          select y;
 
