@@ -35,6 +35,12 @@ namespace PikYak.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(Yak Yak)
+        {
+            return View();
+        }
         // This should work for the search function.
         /*public ActionResult Index(string id)
 

@@ -25,10 +25,10 @@
 
         function success(data) {
             console.log(data);
-
+           
             document.getElementById('sentiment').innerHTML = data.result.sentiment;
             document.getElementById('confidence').innerHTML = data.result.confidence + '%';
-            $("#kindBar").css("width", data.result.confidence);
+            $("#kindBar").css("width", data.result.confidence + "%");
         }
 
         function error(err) {
