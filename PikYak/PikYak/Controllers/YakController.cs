@@ -59,9 +59,10 @@ namespace PikYak.Controllers
         }*/
 
 
-        public ActionResult Search(string yakId)
+        /*public ActionResult Search(string yakId)
         {
             string searchString = yakId;
+        }*/
 
         
         public ActionResult Search(string searchString)
