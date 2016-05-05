@@ -66,9 +66,10 @@
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("Pik Yak", "Index", "Yak")</li> 
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">@Html.ActionLink("FAQ", "FAQ", "Yak")</li> 
                 </ul>
-                <form class="navbar-form navbar-right">
+
+                <form class="navbar-form navbar-right" action="/Yak/SearchYak" method="get">
                     <div class="form-group is-empty">
-                        <input type="text" class="form-control col-md-6" placeholder="Search">
+                        <input type="text" class="form-control col-md-6" name="searchString" id="searchString" placeholder="Search">
                         <span class="material-input"></span>
                     </div>                              
                 </form>                

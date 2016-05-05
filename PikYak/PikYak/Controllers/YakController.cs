@@ -25,11 +25,7 @@ namespace PikYak.Controllers
         {
             return View();
         }
-
-        public ActionResult Search()
-        {
-            return View();
-        }
+     
 
         public ActionResult YakPost()
         {
@@ -59,7 +55,6 @@ namespace PikYak.Controllers
             return View(yaks);
         }*/
 
-
         /*public ActionResult Search(string yakId)
         {
             string searchString = yakId;
@@ -71,13 +66,20 @@ namespace PikYak.Controllers
 
             var yaks = from y in db.Yaks
                        select y;
-
+        
+        public ActionResult SearchYak(string searchString)
+        {            
             if (!String.IsNullOrEmpty(searchString))
             {
-                yaks = yaks.Where(s => s.Text.Contains(searchString));
+                var yakViewModels = getYakViewModel();
+                var searchResults = yakViewModels.Where(yvm => yvm.Yak.Text.Contains(searchString));
+                
+                return View(searchResults);
             }
-
-            return View(yaks);
+            else
+            {
+                return View();
+            }        
         }
 
 
