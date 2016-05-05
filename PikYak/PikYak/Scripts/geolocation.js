@@ -11,6 +11,7 @@ $(document).ready(function () {
     function success(position) {
         document.getElementById("lat").innerHTML = position.coords.latitude;
         document.getElementById("long").innerHTML = position.coords.longitude;
+        
 
         var mapcanvas = document.createElement('div');
         mapcanvas.id = 'mapcanvas';

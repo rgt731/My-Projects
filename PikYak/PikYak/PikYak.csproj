@@ -197,7 +197,7 @@
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\YakViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Yak.cs" />
+    <Compile Include="Models\YakClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

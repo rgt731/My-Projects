@@ -36,9 +36,10 @@ namespace PikYak.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Create(Yak Yak)
+        [HttpGet]
+        public ActionResult Create(YakClass Yak)
         {
+
             return View();
         }
         // This should work for the search function.
@@ -64,7 +65,7 @@ namespace PikYak.Controllers
             string searchString = yakId;
         }*/
 
-        
+
         public ActionResult Search(string searchString)
         {            
 

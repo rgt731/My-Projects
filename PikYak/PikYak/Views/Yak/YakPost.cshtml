@@ -5,12 +5,14 @@
         </div>
     </div>
     <div class="modal-footer">
-        <p id="sentiment">Positive/Negative/Neutral</p>
+        <p id="sentiment" name="sentiment" value="sentiment">Positive/Negative/Neutral</p>
+        <p id="lat" name="lat" value="lat"></p>
+        <p id="long" name="long" value="long"></p>
         <h3>Confidence: </h3>
         <div class="progress">
 
-            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="kindBar">
-                <span class="sr-only" id="confidence">45%</span>
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="kindBar" name="confidence" value="confidence">
+                <span class="sr-only" id="confidence" name="confidence" value="confidence">45%</span>
             </div>
         </div>
         <button type="button" class="btn btn-default postCancel close" data-dismiss="modal">Cancel</button>
@@ -19,3 +21,4 @@
 </form>
 
 <script src="~/Scripts/SentimentClient.js"></script>
+<script src="~/Scripts/geolocation.js"></script>

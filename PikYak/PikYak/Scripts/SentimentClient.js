@@ -29,6 +29,9 @@
             document.getElementById('sentiment').innerHTML = data.result.sentiment;
             document.getElementById('confidence').innerHTML = data.result.confidence + '%';
             $("#kindBar").css("width", data.result.confidence + "%");
+            $("#sentiment").get(data.result.sentiment);
+            $.post(data.result.sentiment);
+            $("#confidence").get(data.result.confidence);
         }
 
         function error(err) {
