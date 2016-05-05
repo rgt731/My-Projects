@@ -58,34 +58,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a class="navbar-brand" href="javascript:void(0)">PikYak</a>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="javascript:void(0)">Home</a></li>
-                    <li><a href="javascript:void(0)">FAQ</a></li>
-                   <!--- <li class="dropdown">
-                        <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Dropdown
-                            <b class="caret"></b>
-                        </a>
-                       -- <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)">Action</a></li>
-                            <li><a href="javascript:void(0)">Another action</a></li>
-                            <li><a href="javascript:void(0)">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Dropdown header</li>
-                            <li><a href="javascript:void(0)">Separated link</a></li>
-                            <li><a href="javascript:void(0)">One more separated link</a></li>
-                        </ul>
-                    </li>-->
-
-                <a class="navbar-brand" href="javascript:void(0)">Pik Yak</a>
-            </div>
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="#"><a href="~/Views/Yak/Faq.cshtml">FAQ</a></li> 
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("Pik Yak", "Index", "Yak")</li> 
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">@Html.ActionLink("FAQ", "FAQ", "Yak")</li> 
                 </ul>
                 <form class="navbar-form navbar-right">
                     <div class="form-group is-empty">
