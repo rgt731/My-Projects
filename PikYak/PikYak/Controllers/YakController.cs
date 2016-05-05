@@ -114,7 +114,7 @@ namespace PikYak.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
+                   // ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
                 }
 
 
