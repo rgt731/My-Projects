@@ -27,7 +27,7 @@ namespace PikYak.Controllers
         }
      
 
-        public ActionResult YakPost()
+        public ActionResult YakCreate()
         {
             return View();
         }
@@ -91,7 +91,7 @@ namespace PikYak.Controllers
             var yaks = from y in db.Yaks
                        select y;
         }*/
-        
+
         public ActionResult SearchYak(string searchString)
         {            
             if (!String.IsNullOrEmpty(searchString))
