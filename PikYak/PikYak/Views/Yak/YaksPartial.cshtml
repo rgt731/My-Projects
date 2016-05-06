@@ -50,9 +50,10 @@
                                         <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">(@Model.LikeCount)</span>
                                     </a>
                                 </div>
+                                <!--Reply Button-->
                                 <div class="col-xs-4 text-right">
-                                    <a href="#" class="yakbutton">
-                                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                    <a href="~/Yak/YakPost?replyId=@Model.ReplyID" class="yakbutton reply-button">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true">@{Model.Yak = new PikYak.Models.Yak();} </span>
                                     </a>
                                 </div>
                             </div>

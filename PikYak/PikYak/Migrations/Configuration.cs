@@ -23,9 +23,11 @@ namespace PikYak.Migrations
             //
                 context.Yaks.AddOrUpdate(
                   p => p.Id,
+
                   new Yak { Text = "This is my first yak, its super positive", Latitude = 69, Longitude = 102, Confidence = 99, Timestamp = DateTime.Now  },
                   new Yak { Text = "This is my second yak, its somewhat positive", Latitude = 87, Longitude = 304, Confidence = 55, Timestamp = DateTime.Now },
                   new Yak { Text = "This is my third yak, its a little positive", Latitude = 17, Longitude = 44, Confidence = 17, Timestamp = DateTime.Now }
+
                   
                 );
                

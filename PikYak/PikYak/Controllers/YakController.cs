@@ -32,8 +32,10 @@ namespace PikYak.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment)
+
         {
             Yak Yak = new Yak() { Text = yakMessage, Latitude = latitude, Longitude = longitude, Confidence = confidence, Sentiment = sentiment };
             Yak.Timestamp = DateTime.Now;
@@ -42,6 +44,13 @@ namespace PikYak.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult CreateYak(Yak Yak)
+        {
+            return RedirectToAction("Index");
+        }
+
         // This should work for the search function.
         /*public ActionResult Index(string id)
 
@@ -65,6 +74,16 @@ namespace PikYak.Controllers
         }*/
 
 
+<<<<<<< HEAD
+=======
+        /*public ActionResult Search(string searchString)
+        {
+
+            var yaks = from y in db.Yaks
+                       select y;
+        }*/
+        
+>>>>>>> origin/master
         public ActionResult SearchYak(string searchString)
         {            
             if (!String.IsNullOrEmpty(searchString))
