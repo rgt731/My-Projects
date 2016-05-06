@@ -27,7 +27,7 @@ namespace PikYak.Controllers
         }
      
 
-        public ActionResult YakPost()
+        public ActionResult YakCreate()
         {
             return View();
         }

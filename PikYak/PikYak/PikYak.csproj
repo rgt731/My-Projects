@@ -191,12 +191,10 @@
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\201605052003053_AddedSentiment.cs" />
     <Compile Include="Migrations\201605052003053_AddedSentiment.Designer.cs">
       <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\201605061959009_YakViewModelMigration.cs" />
     <Compile Include="Migrations\201605061959009_YakViewModelMigration.Designer.cs">
       <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
@@ -204,7 +202,6 @@
     <Compile Include="Migrations\201605062009365_Yaks.cs" />
     <Compile Include="Migrations\201605062009365_Yaks.Designer.cs">
       <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -303,7 +300,7 @@
     <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
     <Content Include="Views\Yak\YaksPartial.cshtml" />
-    <Content Include="Views\Yak\YakPost.cshtml" />
+    <Content Include="Views\Yak\YakCreate.cshtml" />
     <Content Include="Views\Likes\Create.cshtml" />
     <Content Include="Views\Likes\Delete.cshtml" />
     <Content Include="Views\Likes\Details.cshtml" />
@@ -343,18 +340,14 @@
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\201605052003053_AddedSentiment.resx">
       <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\201605061959009_YakViewModelMigration.resx">
       <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\201605062009365_Yaks.resx">
       <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
-
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
