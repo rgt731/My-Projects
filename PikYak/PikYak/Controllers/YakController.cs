@@ -62,10 +62,11 @@ namespace PikYak.Controllers
 
 
         public ActionResult Search(string searchString)
-        {            
+        {
 
             var yaks = from y in db.Yaks
                        select y;
+        }
         
         public ActionResult SearchYak(string searchString)
         {            
