@@ -52,8 +52,8 @@
                                 </div>
                                 <!--Reply Button-->
                                 <div class="col-xs-4 text-right">
-                                    <a href="~/Yak/YakPost?replyId=@Model.ReplyID" class="yakbutton reply-button">
-                                        <span class="glyphicon glyphicon-share" aria-hidden="true">@{Model.Yak = new PikYak.Models.Yak();} </span>
+                                    <a href="~/Yak/Create?replyId=@Model.Yak.Id" class="yakbutton reply-button">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true"> </span>
                                     </a>
                                 </div>
                             </div>
