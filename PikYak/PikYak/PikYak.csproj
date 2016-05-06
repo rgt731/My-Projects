@@ -345,10 +345,12 @@
 
     <EmbeddedResource Include="Migrations\201605052003053_AddedSentiment.resx">
       <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </EmbeddedResource>
 
     <EmbeddedResource Include="Migrations\201605061959009_YakViewModelMigration.resx">
       <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Migrations\201605062009365_Yaks.resx">
       <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
 
