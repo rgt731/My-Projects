@@ -74,8 +74,7 @@ namespace PikYak.Controllers
         }*/
 
 
-<<<<<<< HEAD
-=======
+
         /*public ActionResult Search(string searchString)
         {
 
@@ -83,7 +82,7 @@ namespace PikYak.Controllers
                        select y;
         }*/
         
->>>>>>> origin/master
+
         public ActionResult SearchYak(string searchString)
         {            
             if (!String.IsNullOrEmpty(searchString))
