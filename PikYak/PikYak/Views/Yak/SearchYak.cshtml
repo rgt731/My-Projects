@@ -1,0 +1,11 @@
+﻿@model IEnumerable<PikYak.Models.YakViewModel>
+
+@{
+    ViewBag.Title = "SearchYak";
+}
+
+
+@foreach (var yaksSearched in Model)
+    {
+          Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yaksSearched);
+    }

@@ -11,12 +11,12 @@ namespace PikYak.Controllers
     public class YakController : Controller
     {
         //we can access/view list all likes, yaks, etc
-
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
         public ActionResult Index(string sortOrder)
         {
+
             var yakViewModels = getYakViewModel();
             if (sortOrder != null)
             {
@@ -46,8 +46,14 @@ namespace PikYak.Controllers
         {
             return View();
         }
+
         /*
         public ActionResult Search(string sortOrder)
+
+     
+
+        public ActionResult YakCreate()
+
         {
 
             var yakViewModels = getYakViewModel();
@@ -75,10 +81,25 @@ namespace PikYak.Controllers
         }*/
 
 
-        public ActionResult YakPost()
+
+        [HttpPost]
+        public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment)
+
         {
-            return View();
+            Yak Yak = new Yak() { Text = yakMessage, Latitude = latitude, Longitude = longitude, Confidence = confidence, Sentiment = sentiment };
+            Yak.Timestamp = DateTime.Now;
+             
+            db.Yaks.Add(Yak);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult CreateYak(Yak Yak)
+        {
+            return RedirectToAction("Index");
+        }
+
         // This should work for the search function.
         /*public ActionResult Index(string id)
 
@@ -95,59 +116,72 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        /*public ActionResult Like(string yakId)
 
-        public ActionResult Like(string YakId)
+        /*public ActionResult Search(string yakId)
         {
-            string searchString = id;
+            string searchString = yakId;
+        }*/
+
+
+
+        /*public ActionResult Search(string searchString)
+        {
+
             var yaks = from y in db.Yaks
-                         select y;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                yaks = yaks.Where(s => s.Text.Contains(searchString));
-            }
-
-            return View(yaks);
+                       select y;
         }*/
         
+
+        public ActionResult SearchYak(string searchString)
+        {            
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var yakViewModels = getYakViewModel();
+                var searchResults = yakViewModels.Where(yvm => yvm.Yak.Text.Contains(searchString));
+                
+                return View(searchResults);
+            }
+            else
+            {
+                return View();
+            }        
+        }
+
 
         public ActionResult Like(string yakId)
         {
             if (yakId != null)
 
             {
-                int number;
-
                 //Do checking here with try parse
                 //to make sure yakId is a number
+                int number;
 
                 //changes from a string to a number
                 //This isnt safe***
-
                 // int yakNumber = Int32.Parse(yakId);
-                 bool result = Int32.TryParse(yakId, out number);
+                bool result = Int32.TryParse(yakId, out number);
 
-            if (result)
-            {
+                if (result)
+                {
 
-            int yakNumber = Int32.Parse(yakId);
-            //create new like     //Instaniate a new Like object- object that will get saved into the database
-            var newLike = new Like();
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new like     //Instaniate a new Like object- object that will get saved into the database
+                    var newLike = new Like();
 
-            //fill in the properties
-            //assign the date and time at this moment to the newLike item
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
 
-            newLike.Timestamp = DateTime.Now;
-            newLike.YakId = yakNumber; 
+                    newLike.Timestamp = DateTime.Now;
+                    newLike.YakId = yakNumber;
 
-            //save to db
-            db.Likes.Add(newLike);
-            db.SaveChanges();
+                    //save to db
+                    db.Likes.Add(newLike);
+                    db.SaveChanges();
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Sorry thatwas the wrong data type!";
+                   // ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
                 }
 
 
@@ -155,11 +189,13 @@ namespace PikYak.Controllers
                 return RedirectToAction("Index");
             }
 
-            else{
+            else
+            {
 
                 //redirect to action
+                //If YakId was null
                 return RedirectToAction("Index");
-           }
+            }
         }
 
         private List<YakViewModel> GenerateLikeViewModels()
@@ -184,7 +220,7 @@ namespace PikYak.Controllers
             foreach (var y in yaks)
             {
                 var yvm = new YakViewModel() { Yak = y };
-                //tier 1
+                //LikeCounts
                 if (likeCounts.Where(lc => lc.YakId == y.Id).Count() > 0)
                 {
                     yvm.LikeCount = likeCounts.Where(lc => lc.YakId == y.Id).First().Count;
@@ -195,8 +231,8 @@ namespace PikYak.Controllers
                 }
                 yakViewModels.Add(yvm);
             }
-            
-                return yakViewModels;
+
+            return yakViewModels;
         }
 
         /*public List<YakViewModel> getLikeCount()
@@ -218,7 +254,11 @@ namespace PikYak.Controllers
         }*/
 
         //get like view models function
+
        public List<YakViewModel> getYakViewModel(double userLat, double userLong)
+
+        public List<YakViewModel> getYakViewModel()
+
         {
 
             var yaks = db.Yaks.ToList();
@@ -255,7 +295,7 @@ namespace PikYak.Controllers
 
             }
 
-            return yakViewModels; 
+            return yakViewModels;
 
         }
 

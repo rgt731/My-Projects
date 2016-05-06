@@ -1,15 +1,4 @@
-﻿<link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-5"></div>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg col-sm-2 postButton" data-toggle="modal" data-target="#PostModal">Post</button>
-        <div class="col-sm-5"></div>
-    </div>
-</div>
-
-<!-- Modal -->
+﻿<!-- Modal -->
 <div id="PostModal" class="modal fade modalSize" role="dialog">
     <div class="modal-dialog">
 
@@ -21,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <div class="input-group textBox">
-                    <textarea type="text" class="form-control textBox" placeholder="Your Message" aria-describedby="basic-addon1"></textarea>
+                    <textarea type="text" class="form-control textBox" placeholder="Your Message" aria-describedby="basic-addon1" name="yakMessage" value="yakMessage" id="yakMessage"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -31,8 +20,8 @@
                         <span class="sr-only">45% Complete</span>
                     </div>
                 </div>
-                    <button type="button" class="btn btn-default postCancel close" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-default postCancel close" data-dismiss="modal" value="submit">Submit</button>
+                <button type="button" class="btn btn-default postCancel close" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default postCancel close" data-dismiss="modal" value="submit" name="submit" id="submit">Submit</button>
             </div>
         </div>
 

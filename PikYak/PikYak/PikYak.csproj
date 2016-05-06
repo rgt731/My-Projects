@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -287,7 +287,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Yak\Index.cshtml" />
-    <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
     <Content Include="Views\Yak\YaksPartial.cshtml" />
     <Content Include="Views\Yak\YakPost.cshtml" />
@@ -329,10 +328,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604182146348_test.resx">
       <DependentUpon>201604182146348_test.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
