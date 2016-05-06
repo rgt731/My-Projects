@@ -176,11 +176,11 @@ textarea {
 
 
 
-/* Search */
+/* Sort */
 
-.buttons {
-
+.btn-group {
+    margin-left: 35%;
 }
 
-/* END Search */
+/* END Sort */
 

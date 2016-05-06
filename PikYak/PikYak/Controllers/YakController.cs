@@ -15,44 +15,65 @@ namespace PikYak.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-           
+            var yakViewModels = getYakViewModel();
+            if (sortOrder != null)
+            {
 
-            return View(getYakViewModel());
+                switch (sortOrder.ToLower())
+                {
+
+                    case "date":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.Yak.Timestamp).ToList();
+                        break;
+                    case "likes":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
+                        //yaks = yaks.OrderByDescending(s => s.likes);
+                        break;
+                        /*case "location":
+                            yaks = yaks.OrderBy();
+                            break;*/
+
+                }
+            }
+
+
+            return View(yakViewModels);
         }
 
         public ActionResult Faq()
         {
             return View();
         }
-
+        /*
         public ActionResult Search(string sortOrder)
         {
 
-            var yaks = from s in db.Yaks.ToList()
-                       select s;
-
-            switch (sortOrder)
+            var yakViewModels = getYakViewModel();
+            if (sortOrder != null)
             {
 
-                case "Date":
-                    yaks = yaks.OrderBy(s => s.Timestamp);
-                    break;
-                case "DateDesc":
-                    yaks = yaks.OrderByDescending(s => s.Timestamp);
-                    break;
-                case "Likes":
-                    //yaks = yaks.OrderByDescending(s => s.likes);
-                    break;
-                /*case "location":
-                    yaks = yaks.OrderBy();
-                    break;*/
+                switch (sortOrder.ToLower())
+                {
 
+                    case "date":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.Yak.Timestamp).ToList();
+                        break;
+                    case "likes":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
+                        //yaks = yaks.OrderByDescending(s => s.likes);
+                        break;*/
+                        /*case "location":
+                            yaks = yaks.OrderBy();
+                            break;*/
+                            /*
+                }
             }
 
-            return View(yaks);
-        }
+            return View(yakViewModels);
+        }*/
+
 
         public ActionResult YakPost()
         {
@@ -197,7 +218,7 @@ namespace PikYak.Controllers
         }*/
 
         //get like view models function
-       public List<YakViewModel> getYakViewModel()
+       public List<YakViewModel> getYakViewModel(double userLat, double userLong)
         {
 
             var yaks = db.Yaks.ToList();
@@ -228,6 +249,8 @@ namespace PikYak.Controllers
                 {
                     yvm.LikeCount = 0;
                 }
+                //Compute Distance
+                yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
                 yakViewModels.Add(yvm);
 
             }
@@ -235,6 +258,43 @@ namespace PikYak.Controllers
             return yakViewModels; 
 
         }
+
+        private static double ToRad(double num)
+        {
+
+            return
+            num * Math.PI / 180;
+        }
+
+        public double DistanceBetweenPoints(double lat1, double long1, double lat2, double long2)
+        {
+            const int r = 6371;
+            // radius of earth in km
+
+
+            // Convert to Radians
+
+            lat1 = ToRad(lat1);
+
+            long1 = ToRad(lat2);
+
+            lat2 = ToRad(long1);
+
+            long2 = ToRad(long2);
+
+
+            // Spherical Law of Cosines
+
+            return
+            Math.Acos(
+
+            Math.Sin(lat1) * Math.Sin(lat2) +
+
+            Math.Cos(lat1) * Math.Cos(lat2) * Math.Cos(long2 - long1)
+
+            ) * r;
+        }
+        
     }
 }
 

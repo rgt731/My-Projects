@@ -20,13 +20,22 @@
     <p class="lead">Sharing positivity all over the world!</p>
 </div>
 
+<div class="btn-group buttons">
+    <a class="btn btn-primary btn-lg" href="/yak/Index?sortorder=likes">Likes</a>
+    <a class="btn btn-primary btn-lg" href="/yak/Index?sortorder=location">Location</a>
+    <a class="btn btn-primary btn-lg" href="/yak/Index?sortorder=date">Time</a>
+</div>
+
+<div class="YakPost">
+
 @{ 
     foreach (var yvm in Model)
     {
         Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yvm);
     }
 }
-   
+
+</div>
 
 
 <!--This was a test row, it should really be layed out in the above html,
