@@ -8,8 +8,9 @@ namespace PikYak.Models
     public class YakViewModel
     {
         
-        public YakClass Yak { get; set; }
+        public Yak Yak { get; set; }
         public int LikeCount { get; set; }
+        public int ReplyID { get; set; }
  
     }
 }

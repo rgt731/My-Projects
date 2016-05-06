@@ -33,11 +33,18 @@ namespace PikYak.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create(YakClass Yak)
+        public ActionResult Create(Yak Yak)
         {
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult CreateYak(Yak Yak)
+        {
+            return RedirectToAction("Index");
+        }
+
         // This should work for the search function.
         /*public ActionResult Index(string id)
 
@@ -61,11 +68,12 @@ namespace PikYak.Controllers
         }*/
 
 
-        public ActionResult Search(string searchString)
-        {            
+        /*public ActionResult Search(string searchString)
+        {
 
             var yaks = from y in db.Yaks
                        select y;
+        }*/
         
         public ActionResult SearchYak(string searchString)
         {            
