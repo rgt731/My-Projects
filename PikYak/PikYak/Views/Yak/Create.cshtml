@@ -1,6 +1,14 @@
 ﻿@model PikYak.Models.YakViewModel
 
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
 <form action="/Yak/Create" method="get">
+    @{Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", Model);
+    }
     <div class="modal-body">
         <div class="input-group textBox">
             <textarea type="text" name="yakMessage" class="form-control textBox" placeholder="Your Message" aria-describedby="basic-addon1" value="yakMessage" id="yakMessage" method="get"></textarea>
@@ -24,3 +32,4 @@
 
 <script src="~/Scripts/SentimentClient.js"></script>
 <script src="~/Scripts/geolocation.js"></script>
+

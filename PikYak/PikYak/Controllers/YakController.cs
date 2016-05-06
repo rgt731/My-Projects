@@ -33,10 +33,15 @@ namespace PikYak.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create(Yak Yak)
+        public ActionResult Create(string replyId)
         {
+            int ReplyId;
 
-            return View();
+            Int32.TryParse(replyId, out ReplyId);
+
+            var yvm = getYakViewModel(ReplyId);
+
+            return View(yvm);
         }
 
         [HttpPost]
@@ -234,6 +239,18 @@ namespace PikYak.Controllers
 
             return yakViewModels;
 
+        }
+
+        public YakViewModel getYakViewModel(int ID)
+        {
+
+            var yak = db.Yaks.Where(y => y.Id == ID).First();
+
+            int likeCount = db.Likes.Count(l => l.YakId == ID);
+
+            YakViewModel yvm = new YakViewModel() { Yak = yak, LikeCount = likeCount };
+
+            return yvm;
         }
     }
 }
