@@ -11,7 +11,7 @@
                             {@Model.Yak.Latitude, @Model.Yak.Longitude}
                         </div>
                         <div class="col-xs-4 text-center">
-                            @Model.Yak.Positivity% Positivity
+                           <p id="confidence"> @Model.Yak.Positivity% Positivity</p>
                         </div>
                         <div class="col-xs-4 text-right">
                             @Model.Yak.Timestamp
@@ -29,7 +29,6 @@
                         <p>
                             @ViewBag.ErrorMessage
                         </p>
-                      <!--  <p class="pull-center">User Name: @Model.Yak.Id</p>-->
                     </div>
                 </div>
                 <div class="panel-footer">

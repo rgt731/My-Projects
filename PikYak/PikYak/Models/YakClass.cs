@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PikYak.Models
 {
-    public class Yak
+    public class YakClass
     {
         //this feels right to Dr. Casey
         public int Id { get; set; }
@@ -24,6 +24,6 @@ namespace PikYak.Models
 
         public int ReplyToYakId { get; set; }
 
-  
+
     }
 }

@@ -16,7 +16,7 @@ namespace PikYak.Controllers
         // GET: Yak
         public ActionResult Index()
         {
-           
+
 
             return View(getYakViewModel());
         }
@@ -25,14 +25,17 @@ namespace PikYak.Controllers
         {
             return View();
         }
+     
 
-        public ActionResult Search()
+        public ActionResult YakPost()
         {
             return View();
         }
 
-        public ActionResult YakPost()
+        [HttpGet]
+        public ActionResult Create(YakClass Yak)
         {
+
             return View();
         }
         // This should work for the search function.
@@ -51,20 +54,34 @@ namespace PikYak.Controllers
 
             return View(yaks);
         }*/
-        
+
+        /*public ActionResult Search(string yakId)
+        {
+            string searchString = yakId;
+        }*/
+
+
         public ActionResult Search(string searchString)
         {            
-            var yaks = from y in db.Yaks
-                         select y;
 
+            var yaks = from y in db.Yaks
+                       select y;
+        
+        public ActionResult SearchYak(string searchString)
+        {            
             if (!String.IsNullOrEmpty(searchString))
             {
-                yaks = yaks.Where(s => s.Text.Contains(searchString));
+                var yakViewModels = getYakViewModel();
+                var searchResults = yakViewModels.Where(yvm => yvm.Yak.Text.Contains(searchString));
+                
+                return View(searchResults);
             }
-
-            return View(yaks);
+            else
+            {
+                return View();
+            }        
         }
-        
+
 
         public ActionResult Like(string yakId)
         {
@@ -74,32 +91,32 @@ namespace PikYak.Controllers
                 //Do checking here with try parse
                 //to make sure yakId is a number
                 int number;
-                
+
                 //changes from a string to a number
                 //This isnt safe***
                 // int yakNumber = Int32.Parse(yakId);
-                 bool result = Int32.TryParse(yakId, out number);
+                bool result = Int32.TryParse(yakId, out number);
 
                 if (result)
                 {
 
-                int yakNumber = Int32.Parse(yakId);
-                //create new like     //Instaniate a new Like object- object that will get saved into the database
-                var newLike = new Like();
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new like     //Instaniate a new Like object- object that will get saved into the database
+                    var newLike = new Like();
 
-                //fill in the properties
-                //assign the date and time at this moment to the newLike item
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
 
-                newLike.Timestamp = DateTime.Now;
-                newLike.YakId = yakNumber; 
+                    newLike.Timestamp = DateTime.Now;
+                    newLike.YakId = yakNumber;
 
-                //save to db
-                db.Likes.Add(newLike);
-                db.SaveChanges();
+                    //save to db
+                    db.Likes.Add(newLike);
+                    db.SaveChanges();
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
+                   // ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
                 }
 
 
@@ -107,12 +124,13 @@ namespace PikYak.Controllers
                 return RedirectToAction("Index");
             }
 
-            else{
+            else
+            {
 
                 //redirect to action
                 //If YakId was null
                 return RedirectToAction("Index");
-           }
+            }
         }
 
         private List<YakViewModel> GenerateLikeViewModels()
@@ -148,8 +166,8 @@ namespace PikYak.Controllers
                 }
                 yakViewModels.Add(yvm);
             }
-            
-                return yakViewModels;
+
+            return yakViewModels;
         }
 
         /*public List<YakViewModel> getLikeCount()
@@ -171,7 +189,7 @@ namespace PikYak.Controllers
         }*/
 
         //get like view models function
-       public List<YakViewModel> getYakViewModel()
+        public List<YakViewModel> getYakViewModel()
         {
 
             var yaks = db.Yaks.ToList();
@@ -206,7 +224,7 @@ namespace PikYak.Controllers
 
             }
 
-            return yakViewModels; 
+            return yakViewModels;
 
         }
     }
