@@ -9,8 +9,8 @@ $(document).ready(function () {
     }
 
     function success(position) {
-        document.getElementById("lat").innerHTML = position.coords.latitude;
-        document.getElementById("long").innerHTML = position.coords.longitude;
+        document.getElementById("lat").value = position.coords.latitude;
+        document.getElementById("long").value = position.coords.longitude;
         
 
         var mapcanvas = document.createElement('div');
@@ -41,6 +41,4 @@ $(document).ready(function () {
     function error(err) {
         console.log(err.message);
     }
-
-
 })

@@ -11,7 +11,11 @@
                             {@Model.Yak.Latitude, @Model.Yak.Longitude}
                         </div>
                         <div class="col-xs-4 text-center">
-                           <p id="confidence"> @Model.Yak.Positivity% Positivity</p>
+
+                            @Model.Yak.Sentiment (@Model.Yak.Confidence%)
+
+                           
+
                         </div>
                         <div class="col-xs-4 text-right">
                             @Model.Yak.Timestamp

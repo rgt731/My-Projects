@@ -25,12 +25,11 @@
 
         function success(data) {
             console.log(data);
-           
-            document.getElementById('sentiment').innerHTML = data.result.sentiment;
-            document.getElementById('confidence').innerHTML = data.result.confidence + '%';
+            document.getElementById('sentimentWord').innerHTML = data.result.sentiment;
+            document.getElementById('sentiment').value = data.result.sentiment;
+            document.getElementById('confidence').value = data.result.confidence;
             $("#kindBar").css("width", data.result.confidence + "%");
             $("#sentiment").get(data.result.sentiment);
-            $.post(data.result.sentiment);
             $("#confidence").get(data.result.confidence);
         }
 
@@ -39,7 +38,6 @@
 
 
         }
-
 
         // Update UI with results 
     });

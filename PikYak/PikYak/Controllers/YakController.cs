@@ -45,6 +45,18 @@ namespace PikYak.Controllers
         }
 
         [HttpPost]
+        public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment)
+
+        {
+            Yak Yak = new Yak() { Text = yakMessage, Latitude = latitude, Longitude = longitude, Confidence = confidence, Sentiment = sentiment };
+            Yak.Timestamp = DateTime.Now;
+             
+            db.Yaks.Add(Yak);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public ActionResult CreateYak(Yak Yak)
         {
             return RedirectToAction("Index");
