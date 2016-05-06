@@ -195,6 +195,7 @@
     <Compile Include="Migrations\201605052003053_AddedSentiment.cs" />
     <Compile Include="Migrations\201605052003053_AddedSentiment.Designer.cs">
       <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </Compile>
 
     <Compile Include="Migrations\201605061959009_YakViewModelMigration.cs" />
     <Compile Include="Migrations\201605061959009_YakViewModelMigration.Designer.cs">
