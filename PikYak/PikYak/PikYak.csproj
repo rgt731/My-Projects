@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -195,6 +195,22 @@
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605052003053_AddedSentiment.cs" />
+    <Compile Include="Migrations\201605052003053_AddedSentiment.Designer.cs">
+      <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061959009_YakViewModelMigration.cs" />
+    <Compile Include="Migrations\201605061959009_YakViewModelMigration.Designer.cs">
+      <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605062009365_Yaks.cs" />
+    <Compile Include="Migrations\201605062009365_Yaks.Designer.cs">
+      <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605070515033_ReplyToYak.cs" />
+    <Compile Include="Migrations\201605070515033_ReplyToYak.Designer.cs">
+      <DependentUpon>201605070515033_ReplyToYak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -297,12 +313,9 @@
     <Content Include="Views\Likes\Index.cshtml" />
     <Content Include="Scripts\material.min.js.map" />
     <Content Include="Scripts\ripples.min.js.map" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Yak\SearchYak.cshtml" />
-    <Content Include="Views\Yak\Create.cshtml" />
->>>>>>> refs/remotes/origin/master
-  </ItemGroup>
+    <Content Include="Views\Yak\Create.cshtml" />  
+</ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
@@ -336,6 +349,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605052003053_AddedSentiment.resx">
+      <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061959009_YakViewModelMigration.resx">
+      <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605062009365_Yaks.resx">
+      <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605070515033_ReplyToYak.resx">
+      <DependentUpon>201605070515033_ReplyToYak.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

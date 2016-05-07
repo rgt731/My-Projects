@@ -81,8 +81,8 @@ namespace PikYak.Controllers
         }*/
 
 
-        [HttpGet]
-        public ActionResult Create(string replyId)
+        [HttpPost]
+        public ActionResult CreateReply(string replyId)
         {
             int ReplyId;
 
