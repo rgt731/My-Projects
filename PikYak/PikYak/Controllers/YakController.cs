@@ -81,6 +81,17 @@ namespace PikYak.Controllers
         }*/
 
 
+        [HttpGet]
+        public ActionResult Create(string replyId)
+        {
+            int ReplyId;
+
+            Int32.TryParse(replyId, out ReplyId);
+
+            var yvm = getYakViewModel(ReplyId);
+
+            return View(yvm);
+        }
 
         [HttpPost]
         public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment)
@@ -123,14 +134,12 @@ namespace PikYak.Controllers
         }*/
 
 
-
         /*public ActionResult Search(string searchString)
         {
 
             var yaks = from y in db.Yaks
                        select y;
         }*/
-        
 
         public ActionResult SearchYak(string searchString)
         {            
@@ -297,6 +306,7 @@ namespace PikYak.Controllers
             return yakViewModels;
 
         }
+
         /*
         private static double ToRad(double num)
         {
@@ -334,6 +344,18 @@ namespace PikYak.Controllers
             ) * r;
         }*/
         
+
+        public YakViewModel getYakViewModel(int ID)
+        {
+
+            var yak = db.Yaks.Where(y => y.Id == ID).First();
+
+            int likeCount = db.Likes.Count(l => l.YakId == ID);
+
+            YakViewModel yvm = new YakViewModel() { Yak = yak, LikeCount = likeCount };
+
+            return yvm;
+        }
     }
 }
 
