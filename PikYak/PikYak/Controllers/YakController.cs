@@ -255,9 +255,8 @@ namespace PikYak.Controllers
 
         //get like view models function
 
-       public List<YakViewModel> getYakViewModel(double userLat, double userLong)
 
-        public List<YakViewModel> getYakViewModel()
+        public List<YakViewModel> getYakViewModel(/*double userLat, double userLong*/)
 
         {
 
@@ -290,7 +289,7 @@ namespace PikYak.Controllers
                     yvm.LikeCount = 0;
                 }
                 //Compute Distance
-                yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
+               // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
                 yakViewModels.Add(yvm);
 
             }
@@ -298,7 +297,7 @@ namespace PikYak.Controllers
             return yakViewModels;
 
         }
-
+        /*
         private static double ToRad(double num)
         {
 
@@ -333,7 +332,7 @@ namespace PikYak.Controllers
             Math.Cos(lat1) * Math.Cos(lat2) * Math.Cos(long2 - long1)
 
             ) * r;
-        }
+        }*/
         
     }
 }
