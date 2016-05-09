@@ -7,13 +7,13 @@ namespace PikYak.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ReplyToYak : IMigrationMetadata
+    public sealed partial class what : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ReplyToYak));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(what));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605070515033_ReplyToYak"; }
+            get { return "201605091915053_what"; }
         }
         
         string IMigrationMetadata.Source

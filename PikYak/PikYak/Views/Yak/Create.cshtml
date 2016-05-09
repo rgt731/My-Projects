@@ -7,7 +7,10 @@
 
 
 <form action="/Yak/CreateReply" method="post">
-    @{Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", Model);
+    @{if (Model != null)
+        {
+            Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", Model);
+        }
     }
     <div class="modal-body">
         <div class="input-group textBox">
@@ -15,7 +18,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <p id="sentiment" name="sentiment" value="sentiment">Positive/Negative/Neutral</p>
+        <p id="sentiment" name="sentimentWord" value="sentiment">Positive/Negative/Neutral</p>
         <p id="lat" name="lat" value="lat"></p>
         <p id="long" name="long" value="long"></p>
         <h3>Confidence: </h3>
