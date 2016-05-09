@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604182146348_test.cs" />
+    <Compile Include="Migrations\201604182146348_test.Designer.cs">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.cs" />
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
@@ -242,7 +246,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
     <Content Include="Content\bootstrap-material-design.min.css.map" />
-    <Content Include="Scripts\geolocation.js" />
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
@@ -267,7 +270,6 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ripples.js" />
     <Content Include="Scripts\ripples.min.js" />
-    <Content Include="Scripts\SentimentClient.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -301,26 +303,26 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Yak\Index.cshtml" />
-    <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
     <Content Include="Views\Yak\YaksPartial.cshtml" />
-    <Content Include="Views\Yak\YakCreate.cshtml" />
+    <Content Include="Views\Yak\YakPost.cshtml" />
     <Content Include="Views\Likes\Create.cshtml" />
     <Content Include="Views\Likes\Delete.cshtml" />
     <Content Include="Views\Likes\Details.cshtml" />
     <Content Include="Views\Likes\Edit.cshtml" />
     <Content Include="Views\Likes\Index.cshtml" />
-    <Content Include="Views\Shared\_YakPost.cshtml" />
     <Content Include="Scripts\material.min.js.map" />
     <Content Include="Scripts\ripples.min.js.map" />
     <Content Include="Views\Yak\SearchYak.cshtml" />
-    <Content Include="Views\Yak\Create.cshtml" />
-  </ItemGroup>
+    <Content Include="Views\Yak\Create.cshtml" />  
+</ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -341,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604182146348_test.resx">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>

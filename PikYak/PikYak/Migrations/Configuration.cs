@@ -22,13 +22,22 @@ namespace PikYak.Migrations
             //  to avoid creating duplicate seed data. E.g.
             //
                 context.Yaks.AddOrUpdate(
+                    /*
+                  p => p.Id, 
+                  new Yak { Text = "Just checking out the time stamp!!!", Latitude = 69, Longitude = 102, Positivity = 99, Timestamp = new DateTime(1985, 2, 28) },
+                  new Yak { Text = "This is my first yak, its super positive", Latitude = 69, Longitude = 102, Positivity = 99, Timestamp = DateTime.Now  },
+                  new Yak { Text = "This is my second yak, its somewhat positive", Latitude = 87, Longitude = 304, Positivity = 55, Timestamp = DateTime.Now },
+                  new Yak { Text = "Just checking out the time stamp again!!!", Latitude = 69, Longitude = 102, Positivity = 99, Timestamp = new DateTime(2014, 4, 20) },
+                  new Yak { Text = "This is my third yak, its a little positive", Latitude = 17, Longitude = 44, Positivity = 17, Timestamp = DateTime.Now },
+                  new Yak { Text = "Just checking out the time stamp again!!!", Latitude = 69, Longitude = 102, Positivity = 99, Timestamp = new DateTime(2015, 4, 20) },
+
+
                   p => p.Id,
 
                   new Yak { Text = "This is my first yak, its super positive", Latitude = 69, Longitude = 102, Confidence = 99, Timestamp = DateTime.Now  },
                   new Yak { Text = "This is my second yak, its somewhat positive", Latitude = 87, Longitude = 304, Confidence = 55, Timestamp = DateTime.Now },
                   new Yak { Text = "This is my third yak, its a little positive", Latitude = 17, Longitude = 44, Confidence = 17, Timestamp = DateTime.Now }
-
-                  
+                  */
                 );
                
                 /*seed method for likes?...maybe?*/
