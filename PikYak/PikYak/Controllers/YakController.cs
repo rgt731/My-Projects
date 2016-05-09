@@ -27,38 +27,53 @@ namespace PikYak.Controllers
         }
      
 
-        public ActionResult YakCreate()
+        public ActionResult Create(int? replyId)
         {
-            return View();
-        }
+            YakViewModel yvm = null;
 
-        [HttpPost]
-        public ActionResult CreateReply(string replyId)
-        {
-            int ReplyId;
-
-            Int32.TryParse(replyId, out ReplyId);
-
-            var yvm = getYakViewModel(ReplyId);
+            if (replyId.HasValue)
+            {
+               yvm = getYakViewModel(replyId.Value);
+            }
 
             return View(yvm);
         }
 
         [HttpPost]
-        public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment)
+        public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment, int? replyId)
 
         {
-            Yak Yak = new Yak() { Text = yakMessage, Latitude = latitude, Longitude = longitude, Confidence = confidence, Sentiment = sentiment };
-            Yak.Timestamp = DateTime.Now;
+
+            Yak yak;
+
+            if (replyId != null)
+            {
+                yak = new Yak()
+                {
+                    Text = yakMessage,
+                    Latitude = latitude,
+                    Longitude = longitude,
+                    Confidence = confidence,
+                    Sentiment = sentiment,
+                    ReplyToYakId = replyId.Value,
+                    Timestamp = DateTime.Now
+                };
+            }
+            else
+            {
+                yak = new Yak()
+                {
+                    Text = yakMessage,
+                    Latitude = latitude,
+                    Longitude = longitude,
+                    Confidence = confidence,
+                    Sentiment = sentiment,
+                    Timestamp = DateTime.Now
+                };
+            }
              
-            db.Yaks.Add(Yak);
+            db.Yaks.Add(yak);
             db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public ActionResult CreateYak(Yak Yak)
-        {
             return RedirectToAction("Index");
         }
 
@@ -217,8 +232,9 @@ namespace PikYak.Controllers
         public List<YakViewModel> getYakViewModel()
         {
 
-            var yaks = db.Yaks.ToList();
+            
             var yakViewModels = new List<YakViewModel>();
+            var yaks = db.Yaks.ToList();
 
             //Get Like Count
             var likeCounts = from c in db.Likes

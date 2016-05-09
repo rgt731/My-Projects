@@ -203,9 +203,9 @@
     <Compile Include="Migrations\201605062009365_Yaks.Designer.cs">
       <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605070515033_ReplyToYak.cs" />
-    <Compile Include="Migrations\201605070515033_ReplyToYak.Designer.cs">
-      <DependentUpon>201605070515033_ReplyToYak.cs</DependentUpon>
+    <Compile Include="Migrations\201605091915053_what.cs" />
+    <Compile Include="Migrations\201605091915053_what.Designer.cs">
+      <DependentUpon>201605091915053_what.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -354,8 +354,8 @@
     <EmbeddedResource Include="Migrations\201605062009365_Yaks.resx">
       <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605070515033_ReplyToYak.resx">
-      <DependentUpon>201605070515033_ReplyToYak.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605091915053_what.resx">
+      <DependentUpon>201605091915053_what.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
