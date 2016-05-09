@@ -69,15 +69,15 @@ namespace PikYak.Controllers
                         yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
                         //yaks = yaks.OrderByDescending(s => s.likes);
                         break;*/
-                        /*case "location":
-                            yaks = yaks.OrderBy();
-                            break;*/
-                            /*
-                }
-            }
+        /*case "location":
+            yaks = yaks.OrderBy();
+            break;*/
+        /*
+}
+}
 
-            return View(yakViewModels);
-        }*/
+return View(yakViewModels);
+}*/
 
 
         [HttpPost]
@@ -86,6 +86,9 @@ namespace PikYak.Controllers
             int ReplyId;
 
             Int32.TryParse(replyId, out ReplyId);
+
+            return View();
+        }
 
         public ActionResult Create(int? replyId)
         {
