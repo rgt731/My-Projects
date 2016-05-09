@@ -32,8 +32,8 @@ namespace PikYak.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Create(string replyId)
+        [HttpPost]
+        public ActionResult CreateReply(string replyId)
         {
             int ReplyId;
 
