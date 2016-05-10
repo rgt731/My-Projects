@@ -31,6 +31,12 @@
             $("#kindBar").css("width", data.result.confidence + "%");
             $("#sentiment").get(data.result.sentiment);
             $("#confidence").get(data.result.confidence);
+            if (data.result.sentiment == "Negative" ) {
+                $('#submit').css("visibility", "hidden");
+            }
+            if (data.result.sentiment != "Negative") {
+                $('#submit').css("visibility", "visible");
+            }
         }
 
         function error(err) {

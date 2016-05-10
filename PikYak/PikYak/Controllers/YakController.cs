@@ -14,18 +14,83 @@ namespace PikYak.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
 
+            var yakViewModels = getYakViewModel();
+            if (sortOrder != null)
+            {
 
-            return View(getYakViewModel());
+                switch (sortOrder.ToLower())
+                {
+
+                    case "date":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.Yak.Timestamp).ToList();
+                        break;
+                    case "likes":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
+                        //yaks = yaks.OrderByDescending(s => s.likes);
+                        break;
+                        /*case "location":
+                            yaks = yaks.OrderBy();
+                            break;*/
+
+                }
+            }
+
+
+            return View(yakViewModels);
         }
 
         public ActionResult Faq()
         {
             return View();
         }
+
+        /*
+        public ActionResult Search(string sortOrder)
+
      
+<<<<<<< HEAD
+=======
+        public ActionResult YakCreate()
+
+        {
+
+            var yakViewModels = getYakViewModel();
+            if (sortOrder != null)
+            {
+
+                switch (sortOrder.ToLower())
+                {
+
+                    case "date":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.Yak.Timestamp).ToList();
+                        break;
+                    case "likes":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
+                        //yaks = yaks.OrderByDescending(s => s.likes);
+                        break;*/
+        /*case "location":
+            yaks = yaks.OrderBy();
+            break;*/
+        /*
+}
+}
+
+return View(yakViewModels);
+}*/
+
+
+        /*[HttpPost]
+        public ActionResult CreateReply(string replyId)
+        {
+            int ReplyId;
+
+            Int32.TryParse(replyId, out ReplyId);
+
+            return View();
+        }*/
 
         public ActionResult Create(int? replyId)
         {
@@ -229,11 +294,16 @@ namespace PikYak.Controllers
         }*/
 
         //get like view models function
-        public List<YakViewModel> getYakViewModel()
+
+
+        public List<YakViewModel> getYakViewModel(/*double userLat, double userLong*/)
+
         {
 
             
             var yakViewModels = new List<YakViewModel>();
+
+            //here seems to be a problem!!!!!!!
             var yaks = db.Yaks.ToList();
 
             //Get Like Count
@@ -261,6 +331,8 @@ namespace PikYak.Controllers
                 {
                     yvm.LikeCount = 0;
                 }
+                //Compute Distance
+               // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
                 yakViewModels.Add(yvm);
 
             }
@@ -268,6 +340,44 @@ namespace PikYak.Controllers
             return yakViewModels;
 
         }
+
+        /*
+        private static double ToRad(double num)
+        {
+
+            return
+            num * Math.PI / 180;
+        }
+
+        public double DistanceBetweenPoints(double lat1, double long1, double lat2, double long2)
+        {
+            const int r = 6371;
+            // radius of earth in km
+
+
+            // Convert to Radians
+
+            lat1 = ToRad(lat1);
+
+            long1 = ToRad(lat2);
+
+            lat2 = ToRad(long1);
+
+            long2 = ToRad(long2);
+
+
+            // Spherical Law of Cosines
+
+            return
+            Math.Acos(
+
+            Math.Sin(lat1) * Math.Sin(lat2) +
+
+            Math.Cos(lat1) * Math.Cos(lat2) * Math.Cos(long2 - long1)
+
+            ) * r;
+        }*/
+        
 
         public YakViewModel getYakViewModel(int ID)
         {
