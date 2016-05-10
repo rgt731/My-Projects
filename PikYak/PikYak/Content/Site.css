@@ -121,6 +121,24 @@
 
 /* Yak Post CSS*/
 
+
+.formButtons {
+    color:purple;
+    text-decoration: none;
+    width:15%; 
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    font-weight: 500;
+    border: 0px;
+    background-color: transparent;
+}
+
+.formButtons:hover, :visited, :active {
+    text-decoration: none;
+    color:purple;
+ 
+}
 .postTitle {
     text-align: center;
     color: mediumpurple;

@@ -4,35 +4,44 @@
     ViewBag.Title = "Create";
 }
 
-
-
-<form action="/Yak/CreateReply" method="post">
+<form action="/Yak/Create" method="post">
     @{if (Model != null)
         {
             Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", Model);
         }
     }
-    <div class="modal-body">
+    <div class="container">
         <div class="input-group textBox">
             <textarea type="text" name="yakMessage" class="form-control textBox" placeholder="Your Message" aria-describedby="basic-addon1" value="yakMessage" id="yakMessage" method="get"></textarea>
         </div>
     </div>
     <div class="modal-footer">
-        <p id="sentiment" name="sentimentWord" value="sentiment">Positive/Negative/Neutral</p>
-        <p id="lat" name="lat" value="lat"></p>
-        <p id="long" name="long" value="long"></p>
+        <h3 id="sentimentWord" name="sentimentWord" value="sentimentWord" class="text-center"></h3>
+        <input id="sentiment" name="sentiment" value="sentiment" type="hidden" />
+        <input id="confidence" name="confidence" value="confidence" type="hidden" />
+        <input id="lat" name="latitude" value="latitude" type="hidden" />
+        <input id="long" name="longitude" value="longitude" type="hidden" />
         <h3>Confidence: </h3>
         <div class="progress">
 
-            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="kindBar" name="confidence" value="confidence">
-                <span class="sr-only" id="confidence" name="confidence" value="confidence">45%</span>
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="kindBar">
+                <span class="sr-only" id="confidenceBar" name="confidenceBar" value="confidenceBar">45%</span>
             </div>
         </div>
-        <button type="button" class="btn btn-default postCancel close" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-default postCancel close" data-dismiss="modal" value="submit" name="submit" id="submit">Submit</button>
+        <div class="">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <button type="button" class="formButtons col-md-2 text-center" data-dismiss="modal">@Html.ActionLink("Cancel", "Index", "Yak", new {@class="formButtons"})</button>
+
+
+                <button type="submit" class="formButtons col-md-2 text-center" data-dismiss="modal" value="submit" name="submit" id="submit">Submit</button>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
     </div>
 </form>
 
 <script src="~/Scripts/SentimentClient.js"></script>
+
 <script src="~/Scripts/geolocation.js"></script>
 

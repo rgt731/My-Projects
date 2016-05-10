@@ -50,7 +50,7 @@ namespace PikYak.Controllers
         /*
         public ActionResult Search(string sortOrder)
 
-     
+
         public ActionResult YakCreate()
 
         {
@@ -79,8 +79,6 @@ namespace PikYak.Controllers
 return View(yakViewModels);
 }*/
 
-        /*
-        [HttpPost]
         public ActionResult CreateReply(string replyId)
         {
             int ReplyId;

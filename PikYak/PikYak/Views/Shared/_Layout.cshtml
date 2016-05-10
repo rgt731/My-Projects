@@ -79,6 +79,12 @@
         </div>
     </div>    
 
+    @{
+        Random numberGen = new Random();
+        HttpCookie pictureTracker = new HttpCookie("User Picture");
+        pictureTracker["imageNumber"] = "numberGen";
+    }
+        
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
