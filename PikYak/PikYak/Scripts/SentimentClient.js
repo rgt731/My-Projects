@@ -24,13 +24,14 @@
         event.preventDefault();
 
         function success(data) {
+            var confidencePercent = Math.round(data.result.confidence);
             console.log(data);
             document.getElementById('sentimentWord').innerHTML = data.result.sentiment;
             document.getElementById('sentiment').value = data.result.sentiment;
-            document.getElementById('confidence').value = data.result.confidence;
-            $("#kindBar").css("width", data.result.confidence + "%");
+            document.getElementById('confidence').value = confidencePercent;
+            $("#kindBar").css("width", confidencePercent + "%");
             $("#sentiment").get(data.result.sentiment);
-            $("#confidence").get(data.result.confidence);
+            $("#confidence").get(confidencePercent);
             if (data.result.sentiment == "Negative" ) {
                 $('#submit').css("visibility", "hidden");
             }
