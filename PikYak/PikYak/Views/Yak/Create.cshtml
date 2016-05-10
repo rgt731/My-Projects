@@ -4,9 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-
-
-<form action="/Yak/CreateReply" method="post">
+<form action="/Yak/Create" method="post">
     @{if (Model != null)
         {
             Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", Model);
@@ -44,4 +42,6 @@
 </form>
 
 <script src="~/Scripts/SentimentClient.js"></script>
+
 <script src="~/Scripts/geolocation.js"></script>
+

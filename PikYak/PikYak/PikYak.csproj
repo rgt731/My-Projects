@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604182146348_test.cs" />
+    <Compile Include="Migrations\201604182146348_test.Designer.cs">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.cs" />
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
@@ -206,6 +210,10 @@
     <Compile Include="Migrations\201605091915053_what.cs" />
     <Compile Include="Migrations\201605091915053_what.Designer.cs">
       <DependentUpon>201605091915053_what.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605092312022_HadTo.cs" />
+    <Compile Include="Migrations\201605092312022_HadTo.Designer.cs">
+      <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -242,7 +250,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
     <Content Include="Content\bootstrap-material-design.min.css.map" />
-    <Content Include="Scripts\geolocation.js" />
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Content\bootstrap-material-design.css.map" />
@@ -267,7 +274,6 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ripples.js" />
     <Content Include="Scripts\ripples.min.js" />
-    <Content Include="Scripts\SentimentClient.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -301,16 +307,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Yak\Index.cshtml" />
-    <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
     <Content Include="Views\Yak\YaksPartial.cshtml" />
-    <Content Include="Views\Yak\YakCreate.cshtml" />
+    <Content Include="Views\Yak\YakPost.cshtml" />
     <Content Include="Views\Likes\Create.cshtml" />
     <Content Include="Views\Likes\Delete.cshtml" />
     <Content Include="Views\Likes\Details.cshtml" />
     <Content Include="Views\Likes\Edit.cshtml" />
     <Content Include="Views\Likes\Index.cshtml" />
-    <Content Include="Views\Shared\_YakPost.cshtml" />
     <Content Include="Scripts\material.min.js.map" />
     <Content Include="Scripts\ripples.min.js.map" />
     <Content Include="Views\Yak\SearchYak.cshtml" />
@@ -320,7 +324,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -342,6 +348,9 @@
     <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604182146348_test.resx">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605091915053_what.resx">
       <DependentUpon>201605091915053_what.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605092312022_HadTo.resx">
+      <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
