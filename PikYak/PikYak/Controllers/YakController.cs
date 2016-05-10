@@ -26,7 +26,6 @@ namespace PikYak.Controllers
             return View();
         }
      
-
         public ActionResult Create(int? replyId)
         {
             YakViewModel yvm = null;
@@ -40,7 +39,7 @@ namespace PikYak.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(string yakMessage, double latitude, double longitude, double confidence, string sentiment, int? replyId)
+        public ActionResult CreateReply(string yakMessage, double latitude, double longitude, double confidence, string sentiment, int? replyId)
 
         {
 
