@@ -25,6 +25,7 @@ namespace PikYak.Models
         public int ReplyToYakId { get; set; }
 
         public string Sentiment { get; set; }
+
         public int Positivity { get; internal set; }
     }
 }

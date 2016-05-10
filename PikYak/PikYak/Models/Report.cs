@@ -8,6 +8,11 @@ namespace PikYak.Models
     public class Report
     {
 
+        public Report()
+        {
+
+        }
+
         //create a convience constructor
         public Report(int yakId)
         {

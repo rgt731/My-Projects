@@ -237,6 +237,59 @@ return View(yakViewModels);
             }
         }
 
+        /***************Changes for Report Yak*************/
+
+        public ActionResult Report(string yakId)
+        {
+            if (yakId != null)
+
+            {
+                //Do checking here with try parse
+                //to make sure yakId is a number
+                int number;
+
+                //changes from a string to a number
+                bool result = Int32.TryParse(yakId, out number);
+
+
+                if (result)
+                {
+
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new report     //Instaniate a new Like object- object that will get saved into the database
+                    var newReport = new Report();
+
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
+
+                    newReport.Timestamp = DateTime.Now;
+                    newReport.YakId = yakNumber;
+
+                    //save to db
+                    db.Reports.Add(newReport);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
+                }
+
+
+                //redirect to action
+                return RedirectToAction("Index");
+            }
+
+            else
+            {
+
+                //redirect to action
+                //If YakId was null
+                return RedirectToAction("Index");
+            }
+        }
+
+        /***************Changes for Report Report END*************/
+
         private List<YakViewModel> GenerateLikeViewModels()
         {
             //create a new list of likes
@@ -267,6 +320,43 @@ return View(yakViewModels);
                 else
                 {
                     yvm.LikeCount = 0;
+                }
+                yakViewModels.Add(yvm);
+            }
+
+            return yakViewModels;
+        }
+
+        /**************** Reports ViewModel*******************/
+
+        private List<YakViewModel> GenerateReportViewModels()
+        {
+            //create a new list of reports
+            var yakViewModels = new List<YakViewModel>();
+
+            var reportCounts = from r in db.Reports
+                               
+                             group r by r.YakId into grouping
+                             select new
+                             {
+                                 YakId = grouping.Key,
+                                 Count = grouping.Count()
+                             };
+
+            //refer to this connection to the database
+            var yaks = db.Yaks.ToList();
+
+            foreach (var y in yaks)
+            {
+                var yvm = new YakViewModel() { Yak = y };
+                //ReportCounts
+                if (reportCounts.Where(rc => rc.YakId == y.Id).Count() > 0)
+                {
+                    yvm.ReportCount = reportCounts.Where(rc => rc.YakId == y.Id).First().Count;
+                }
+                else
+                {
+                    yvm.ReportCount = 0;
                 }
                 yakViewModels.Add(yvm);
             }

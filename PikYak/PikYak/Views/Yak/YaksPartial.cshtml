@@ -36,9 +36,10 @@
                     <div class="panel-container">
                         <div class="row">
                             <div class="col-xs-9 col-xs-offset-2">
-                                <div class="col-xs-4 text-left">
-                                    <a href="#" class="yakbutton">
-                                        <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                                <div class="col-xs-4 text-left">    
+                                    <!--Report button-->
+                                    <a href="/Yak/Report?yakId=@Model.Yak.Id" class="yakbutton">
+                                        <span class="glyphicon glyphicon-flag" aria-hidden="true">(@Model.ReportCount)</span>
                                     </a>
                                 </div>
                                 <div class="col-xs-4 text-center">
