@@ -103,7 +103,7 @@
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
     content: "\2b";    /* toggle icon " + " */
     float: right;        /* position of toggle icons */
-    color: red;         /* Color for toggle icons */
+    color: orangered;         /* Color for toggle icons */
 }
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
@@ -115,6 +115,8 @@
     text-align:center;
   
 }
+
+/*END FAQ CSS*/
 
 
 /* Yak Post CSS*/

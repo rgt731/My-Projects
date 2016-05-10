@@ -200,6 +200,7 @@ return View(yakViewModels);
                 // int yakNumber = Int32.Parse(yakId);
                 bool result = Int32.TryParse(yakId, out number);
 
+
                 if (result)
                 {
 
