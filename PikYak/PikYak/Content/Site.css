@@ -14,11 +14,7 @@
 }*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
+
 
 #postYakButton{
     background-color: #6A227D;
@@ -153,9 +149,6 @@ textarea {
     text-align: center;
 }
 
-.postCancel {
-    float: right;
-}
 
 .postButton {
     margin-top: 5%;
@@ -187,14 +180,16 @@ textarea {
      color: rebeccapurple;
  }
 
+#yakMessage {
+     width: 100%;
+ }
 
 
+/* Sort */
 
-/* Search */
-
-.buttons {
-
+.btn-group {
+    margin-left: 35%;
 }
 
-/* END Search */
+/* END Sort */
 

@@ -1,7 +1,4 @@
 ﻿@model PikYak.Models.YakViewModel
-
-
-
     <div class="row flex">
         <div class="col-md-8 col-sm-offset-2">
             <div class="panel panel-primary yak">
@@ -11,7 +8,11 @@
                             {@Model.Yak.Latitude, @Model.Yak.Longitude}
                         </div>
                         <div class="col-xs-4 text-center">
-                            @Model.Yak.Positivity% Positivity
+
+                            @Model.Yak.Sentiment (@Model.Yak.Confidence%)
+
+                           
+
                         </div>
                         <div class="col-xs-4 text-right">
                             @Model.Yak.Timestamp
@@ -29,7 +30,6 @@
                         <p>
                             @ViewBag.ErrorMessage
                         </p>
-                      <!--  <p class="pull-center">User Name: @Model.Yak.Id</p>-->
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -47,9 +47,10 @@
                                         <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">(@Model.LikeCount)</span>
                                     </a>
                                 </div>
+                                <!--Reply Button-->
                                 <div class="col-xs-4 text-right">
-                                    <a href="#" class="yakbutton">
-                                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                                    <a href="~/Yak/Create?replyId=@Model.Yak.Id" class="yakbutton reply-button">
+                                        <span class="glyphicon glyphicon-share" aria-hidden="true"> </span>
                                     </a>
                                 </div>
                             </div>

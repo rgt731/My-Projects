@@ -10,6 +10,8 @@ namespace PikYak.Models
         
         public Yak Yak { get; set; }
         public int LikeCount { get; set; }
- 
+        public double DistanceAway { get; set; }
+        public int ReplyID { get; set; }
+
     }
 }

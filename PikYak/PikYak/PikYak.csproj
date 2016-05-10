@@ -187,9 +187,33 @@
     <Compile Include="Migrations\201604180048465_LikeMigration.Designer.cs">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604182146348_test.cs" />
+    <Compile Include="Migrations\201604182146348_test.Designer.cs">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.cs" />
     <Compile Include="Migrations\201604191854450_RemoveNumberFromYak.Designer.cs">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605052003053_AddedSentiment.cs" />
+    <Compile Include="Migrations\201605052003053_AddedSentiment.Designer.cs">
+      <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061959009_YakViewModelMigration.cs" />
+    <Compile Include="Migrations\201605061959009_YakViewModelMigration.Designer.cs">
+      <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605062009365_Yaks.cs" />
+    <Compile Include="Migrations\201605062009365_Yaks.Designer.cs">
+      <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605091915053_what.cs" />
+    <Compile Include="Migrations\201605091915053_what.Designer.cs">
+      <DependentUpon>201605091915053_what.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605092312022_HadTo.cs" />
+    <Compile Include="Migrations\201605092312022_HadTo.Designer.cs">
+      <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,7 +307,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Yak\Index.cshtml" />
-    <Content Include="Views\Yak\Search.cshtml" />
     <Content Include="Views\Yak\Faq.cshtml" />
     <Content Include="Views\Yak\YaksPartial.cshtml" />
     <Content Include="Views\Yak\YakPost.cshtml" />
@@ -294,12 +317,16 @@
     <Content Include="Views\Likes\Index.cshtml" />
     <Content Include="Scripts\material.min.js.map" />
     <Content Include="Scripts\ripples.min.js.map" />
+    <Content Include="Views\Yak\SearchYak.cshtml" />
+    <Content Include="Views\Yak\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -321,8 +348,26 @@
     <EmbeddedResource Include="Migrations\201604180048465_LikeMigration.resx">
       <DependentUpon>201604180048465_LikeMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604182146348_test.resx">
+      <DependentUpon>201604182146348_test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604191854450_RemoveNumberFromYak.resx">
       <DependentUpon>201604191854450_RemoveNumberFromYak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605052003053_AddedSentiment.resx">
+      <DependentUpon>201605052003053_AddedSentiment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061959009_YakViewModelMigration.resx">
+      <DependentUpon>201605061959009_YakViewModelMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605062009365_Yaks.resx">
+      <DependentUpon>201605062009365_Yaks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605091915053_what.resx">
+      <DependentUpon>201605091915053_what.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605092312022_HadTo.resx">
+      <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
