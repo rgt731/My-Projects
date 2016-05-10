@@ -169,7 +169,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\LikesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\YakController.cs" />
     <Compile Include="Global.asax.cs">
@@ -215,10 +214,15 @@
     <Compile Include="Migrations\201605092312022_HadTo.Designer.cs">
       <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605100334570_Report.cs" />
+    <Compile Include="Migrations\201605100334570_Report.Designer.cs">
+      <DependentUpon>201605100334570_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Like.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Models\YakViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Yak.cs" />
@@ -365,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605092312022_HadTo.resx">
       <DependentUpon>201605092312022_HadTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605100334570_Report.resx">
+      <DependentUpon>201605100334570_Report.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

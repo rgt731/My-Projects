@@ -86,7 +86,7 @@ return View(yakViewModels);
             Int32.TryParse(replyId, out ReplyId);
 
             return View();
-        }*/
+        }
 
         public ActionResult Create(int? replyId)
         {
@@ -235,16 +235,69 @@ return View(yakViewModels);
             }
         }
 
-        private List<YakViewModel> GenerateLikeViewModels()
+        /***************Changes for Report Yak*************/
+
+        public ActionResult Report(string yakId)
         {
-            //create a new list of likes
+            if (yakId != null)
+
+            {
+                //Do checking here with try parse
+                //to make sure yakId is a number
+                int number;
+
+                //changes from a string to a number
+                bool result = Int32.TryParse(yakId, out number);
+
+
+                if (result)
+                {
+
+                    int yakNumber = Int32.Parse(yakId);
+                    //create new report     //Instaniate a new Like object- object that will get saved into the database
+                    var newReport = new Report();
+
+                    //fill in the properties
+                    //assign the date and time at this moment to the newLike item
+
+                    newReport.Timestamp = DateTime.Now;
+                    newReport.YakId = yakNumber;
+
+                    //save to db
+                    db.Reports.Add(newReport);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // ViewBag.ErrorMessage = "Sorry you entered the wrong data type in the Like address bar, Quit being Fancy!";
+                }
+
+
+                //redirect to action
+                return RedirectToAction("Index");
+            }
+
+            else
+            {
+
+                //redirect to action
+                //If YakId was null
+                return RedirectToAction("Index");
+            }
+        }
+
+        
+
+        /**************** Reports ViewModel*******************/
+        /*
+        private List<YakViewModel> GenerateReportViewModels()
+        {
+            //create a new list of reports
             var yakViewModels = new List<YakViewModel>();
 
-            var likeCounts = from l in db.Likes
-
-                                 // where l.
-
-                             group l by l.YakId into grouping
+            var reportCounts = from r in db.Reports
+                               
+                             group r by r.YakId into grouping
                              select new
                              {
                                  YakId = grouping.Key,
@@ -257,21 +310,21 @@ return View(yakViewModels);
             foreach (var y in yaks)
             {
                 var yvm = new YakViewModel() { Yak = y };
-                //LikeCounts
-                if (likeCounts.Where(lc => lc.YakId == y.Id).Count() > 0)
+                //ReportCounts
+                if (reportCounts.Where(rc => rc.YakId == y.Id).Count() > 0)
                 {
-                    yvm.LikeCount = likeCounts.Where(lc => lc.YakId == y.Id).First().Count;
+                    yvm.ReportCount = reportCounts.Where(rc => rc.YakId == y.Id).First().Count;
                 }
                 else
                 {
-                    yvm.LikeCount = 0;
+                    yvm.ReportCount = 0;
                 }
                 yakViewModels.Add(yvm);
             }
 
             return yakViewModels;
         }
-
+        */
         /*public List<YakViewModel> getLikeCount()
         {
             var yakViewModels = new List<YakViewModel>();
@@ -292,6 +345,7 @@ return View(yakViewModels);
 
         //get like view models function
 
+            /*** This is what runs when INDEX is called ****/
 
         public List<YakViewModel> getYakViewModel(/*double userLat, double userLong*/)
 
@@ -312,6 +366,15 @@ return View(yakViewModels);
                                  Count = grouping.Count()
                              };//Finish Like Count
 
+            var reportCounts = from r in db.Reports
+
+                               group r by r.YakId into grouping
+                               select new
+                               {
+                                   YakId = grouping.Key,
+                                   Count = grouping.Count()
+                               };
+
 
 
             foreach (var y in yaks)
@@ -328,8 +391,18 @@ return View(yakViewModels);
                 {
                     yvm.LikeCount = 0;
                 }
+
+                if (reportCounts.Where(rc => rc.YakId == y.Id).Count() > 0)
+                {
+                    yvm.ReportCount = reportCounts.Where(rc => rc.YakId == y.Id).First().Count;
+                }
+                else
+                {
+                    yvm.ReportCount = 0;
+                }
+
                 //Compute Distance
-               // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
+                // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
                 yakViewModels.Add(yvm);
 
             }
