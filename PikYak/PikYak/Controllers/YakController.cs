@@ -79,7 +79,7 @@ namespace PikYak.Controllers
 return View(yakViewModels);
 }*/
 
-
+        /*
         [HttpPost]
         public ActionResult CreateReply(string replyId)
         {
@@ -88,7 +88,7 @@ return View(yakViewModels);
             Int32.TryParse(replyId, out ReplyId);
 
             return View();
-        }
+        }*/
 
         public ActionResult Create(int? replyId)
         {
