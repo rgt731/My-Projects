@@ -51,6 +51,8 @@ namespace PikYak.Controllers
         public ActionResult Search(string sortOrder)
 
      
+<<<<<<< HEAD
+=======
         public ActionResult YakCreate()
 
         {
@@ -80,7 +82,7 @@ return View(yakViewModels);
 }*/
 
 
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult CreateReply(string replyId)
         {
             int ReplyId;
@@ -88,7 +90,7 @@ return View(yakViewModels);
             Int32.TryParse(replyId, out ReplyId);
 
             return View();
-        }
+        }*/
 
         public ActionResult Create(int? replyId)
         {
