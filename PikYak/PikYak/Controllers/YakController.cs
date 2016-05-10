@@ -300,6 +300,8 @@ return View(yakViewModels);
 
             
             var yakViewModels = new List<YakViewModel>();
+
+            //here seems to be a problem!!!!!!!
             var yaks = db.Yaks.ToList();
 
             //Get Like Count
