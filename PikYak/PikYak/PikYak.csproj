@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressSSLPort>44347</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
@@ -239,7 +239,6 @@
     <Content Include="Content\Images\favicon-32x32.png" />
     <Content Include="Content\Images\favicon.jpg" />
     <Content Include="Content\Images\TestGlyphIcon.png" />
-    <Content Include="Content\pik yak2.png" />
     <Content Include="Content\ripples.css" />
     <Content Include="Content\ripples.min.css" />
     <Content Include="Content\YakPostStyle.css" />
