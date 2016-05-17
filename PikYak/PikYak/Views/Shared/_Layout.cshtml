@@ -67,7 +67,7 @@
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("Pik Yak", "Index", "Yak")</li> 
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">@Html.ActionLink("FAQ", "FAQ", "Yak")</li> 
                 </ul>
-                @Html.Partial("_LoginPartial")
+              <!-- Html.Partial("_LoginPartial")-->
 
                 <form class="navbar-form navbar-right" action="/Yak/SearchYak" method="get">
                     <div class="form-group is-empty">
