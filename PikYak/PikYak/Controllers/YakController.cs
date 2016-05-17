@@ -14,6 +14,8 @@ namespace PikYak.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Yak
+
+ 
         public ActionResult Index(string sortOrder)
         {
 
@@ -42,7 +44,15 @@ namespace PikYak.Controllers
             return View(yakViewModels);
         }
 
+    
         public ActionResult Faq()
+        {
+            return View();
+        }
+
+        //Make sure a user is logged into the system!!
+        [Authorize]
+        public ActionResult Admin()
         {
             return View();
         }
@@ -252,6 +262,10 @@ return View(yakViewModels);
 
                 if (result)
                 {
+                    /********************************************************/
+                    /*changes need to be made here if reportCount is over 10*/
+                    /********************************************************/
+
 
                     int yakNumber = Int32.Parse(yakId);
                     //create new report     //Instaniate a new Like object- object that will get saved into the database
@@ -354,7 +368,6 @@ return View(yakViewModels);
             
             var yakViewModels = new List<YakViewModel>();
 
-            //here seems to be a problem!!!!!!!
             var yaks = db.Yaks.ToList();
 
             //Get Like Count
@@ -364,8 +377,9 @@ return View(yakViewModels);
                              {
                                  LikeId = grouping.Key,
                                  Count = grouping.Count()
-                             };//Finish Like Count
+                             };
 
+            //Get Report Count
             var reportCounts = from r in db.Reports
 
                                group r by r.YakId into grouping
@@ -381,12 +395,13 @@ return View(yakViewModels);
             {
 
                 var yvm = new YakViewModel() { Yak = y };
-                //for each y.Id how likes are in this table
-                // getLikeCount(); 
+             
                 if (likeCounts.Where(lc => lc.LikeId == y.Id).Count() > 0)
                 {
                     yvm.LikeCount = likeCounts.Where(yc => yc.LikeId == y.Id).First().Count;
                 }
+
+                //if the like count was less than 0 set it to 0 then add one
                 else
                 {
                     yvm.LikeCount = 0;
@@ -396,6 +411,8 @@ return View(yakViewModels);
                 {
                     yvm.ReportCount = reportCounts.Where(rc => rc.YakId == y.Id).First().Count;
                 }
+
+                //if the like count was less than 0 set it to 0 then add one
                 else
                 {
                     yvm.ReportCount = 0;

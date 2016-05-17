@@ -203,6 +203,12 @@
  }
 
 
+/*Make a clicked item bold?*/
+
+a:visited {
+font-weight:bold;
+}
+
 /* Sort */
 
 .btn-group {
