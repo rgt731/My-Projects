@@ -54,10 +54,13 @@ namespace PikYak
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
+
+                //Needs to be changed once we actually lanch this product!!!
+
+               /* RequireNonLetterOrDigit = true,
                 RequireDigit = true,
                 RequireLowercase = true,
-                RequireUppercase = true,
+                RequireUppercase = true,*/
             };
 
             // Configure user lockout defaults
