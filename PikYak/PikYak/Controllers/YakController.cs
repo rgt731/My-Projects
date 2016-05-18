@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace PikYak.Controllers
 {
@@ -33,9 +34,15 @@ namespace PikYak.Controllers
                         yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
                         //yaks = yaks.OrderByDescending(s => s.likes);
                         break;
-                        /*case "location":
-                            yaks = yaks.OrderBy();
-                            break;*/
+                    /*case "location":
+                        yaks = yaks.OrderBy();
+                        break;*/
+                    case "reports":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.ReportCount).ToList();
+                        break;
+                    case "location":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.DistanceAway).ToList();
+                        break;
 
                 }
             }
@@ -45,16 +52,50 @@ namespace PikYak.Controllers
         }
 
     
+
         public ActionResult Faq()
         {
             return View();
         }
 
+
+
+
+        //log out function
+        [Authorize]
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
+        }
+
+
+
         //Make sure a user is logged into the system!!
         [Authorize]
-        public ActionResult Admin()
+        public ActionResult Admin(string sortOrder)
         {
-            return View();
+            var yakViewModels = getYakViewModel();
+            if (sortOrder != null)
+            {
+
+                //Something needs to happen here to only show reports yaks greater than 10
+
+                switch (sortOrder.ToLower())
+                {
+                    case "likes":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.LikeCount).ToList();
+                        break;
+                    case "reports":
+                        yakViewModels = yakViewModels.OrderByDescending(yvm => yvm.ReportCount).ToList();
+                        break;
+
+                }
+            }
+
+
+            return View(yakViewModels);
+
         }
 
         /*
@@ -222,7 +263,7 @@ return View(yakViewModels);
                     newLike.Timestamp = DateTime.Now;
                     newLike.YakId = yakNumber;
 
-                    //save to db
+                    //save to database
                     db.Likes.Add(newLike);
                     db.SaveChanges();
                 }

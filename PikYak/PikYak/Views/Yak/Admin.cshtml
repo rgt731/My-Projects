@@ -1,10 +1,35 @@
-﻿@model PikYak.Models.Report
+﻿@model IEnumerable<PikYak.Models.YakViewModel>
 
 @{
     ViewBag.Title = "AdminPage";
 }
 
 <div class="jumbotron">
-    <h1>Welcome To the Admin Page!</h1>
+    <h1>Welcome To the Admin Page @User.Identity.Name!</h1>
     <p class="lead">Here are the items you need to take a look at...</p>
 </div>
+
+
+
+
+
+
+
+
+<div class="btn-group buttons">
+    <a class="btn btn-primary btn-lg" href="/yak/Admin?sortorder=reports">Reports</a>
+    <a class="btn btn-primary btn-lg" href="/yak/Admin?sortorder=likes">Likes</a>
+
+
+</div>
+
+    <div class="YakPost">
+
+        @{
+            foreach (var yvm in Model)
+            {
+                Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yvm);
+            }
+        }
+
+    </div>
