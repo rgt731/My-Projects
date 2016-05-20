@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Net;
 
 namespace PikYak.Controllers
 {
@@ -518,6 +519,45 @@ return View(yakViewModels);
 
             return yvm;
         }
+
+        /**********************************************************/
+        /***Going to need to delete posts once they are reported***/
+        /**********************************************************/
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            YakViewModel yakViewModel = db.YakViewModels.Find(id);
+            if (yakViewModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(yakViewModel);
+        }
+
+        // POST: SecretWordModelsController2/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            YakViewModel yakViewModel = db.YakViewModels.Find(id);
+            db.YakViewModels.Remove(yakViewModel);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
     }
 }
 
