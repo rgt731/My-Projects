@@ -49,7 +49,7 @@ namespace PikYak.Models
 
         //created to be able to delete reported yaks
 
-        public System.Data.Entity.DbSet<PikYak.Models.YakViewModel> YakViewModels { get; set; }
+       // public System.Data.Entity.DbSet<PikYak.Models.YakViewModel> YakViewModels { get; set; }
 
     }
 }

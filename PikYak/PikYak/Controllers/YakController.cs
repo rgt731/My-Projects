@@ -524,6 +524,7 @@ return View(yakViewModels);
         /***Going to need to delete posts once they are reported***/
         /**********************************************************/
 
+            /*
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -556,7 +557,7 @@ return View(yakViewModels);
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
 
     }
 }
