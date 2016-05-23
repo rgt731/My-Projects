@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201605171603014_logInMigration2.Designer.cs">
       <DependentUpon>201605171603014_logInMigration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605210431314_AddedSecurity.cs" />
+    <Compile Include="Migrations\201605210431314_AddedSecurity.Designer.cs">
+      <DependentUpon>201605210431314_AddedSecurity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -383,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605171603014_logInMigration2.resx">
       <DependentUpon>201605171603014_logInMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605210431314_AddedSecurity.resx">
+      <DependentUpon>201605210431314_AddedSecurity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

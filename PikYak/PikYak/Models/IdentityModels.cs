@@ -44,7 +44,7 @@ namespace PikYak.Models
         public DbSet<Yak> Yaks { get; set; }
 
 
-        //Create the Reports Tables!!!!!! Store thes into database
+        //Create the Reports Tables Store thes into database
         public DbSet<Report> Reports { get; set; }
 
         //created to be able to delete reported yaks
