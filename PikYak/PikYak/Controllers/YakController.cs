@@ -524,30 +524,35 @@ return View(yakViewModels);
         /***Going to need to delete posts once they are reported***/
         /**********************************************************/
 
-            /*
+        
+       /* This section of code is for a confirmation page 
+        To make sure you do want to delete a yak */    
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            YakViewModel yakViewModel = db.YakViewModels.Find(id);
-            if (yakViewModel == null)
+            Yak currentYak = db.Yaks.Find(id); 
+            if (currentYak == null)
             {
                 return HttpNotFound();
             }
-            return View(yakViewModel);
+            return View(currentYak);
         }
+
+        /* This section of code is for actually 
+        deleting a yak */
 
         // POST: SecretWordModelsController2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            YakViewModel yakViewModel = db.YakViewModels.Find(id);
-            db.YakViewModels.Remove(yakViewModel);
+            Yak currentYak = db.Yaks.Find(id);
+            db.Yaks.Remove(currentYak);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)
@@ -557,7 +562,7 @@ return View(yakViewModels);
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }*/
+        }
 
     }
 }

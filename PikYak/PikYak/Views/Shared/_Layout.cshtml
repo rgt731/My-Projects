@@ -64,8 +64,17 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("Pik Yak", "Index", "Yak")</li> 
-                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">@Html.ActionLink("FAQ", "FAQ", "Yak")</li> 
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Html.ActionLink("Pik Yak", "Index", "Yak")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">@Html.ActionLink("FAQ", "FAQ", "Yak")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "AdminPage" ? "active" : "")">@Html.ActionLink("Admin Page", "Admin", "Yak")</li>
+
+                    }
+                    else
+                    {
+                       //show nothing
+                    }
                 </ul>
 
               

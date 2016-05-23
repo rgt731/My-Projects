@@ -330,6 +330,7 @@
     <Content Include="Views\Yak\SearchYak.cshtml" />
     <Content Include="Views\Yak\Create.cshtml" />
     <Content Include="Views\Yak\Admin.cshtml" />
+    <Content Include="Views\Yak\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
