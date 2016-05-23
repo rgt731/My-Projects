@@ -12,6 +12,23 @@
             {
                 @Html.AntiForgeryToken()
                 <h4>Use a local account to log in.</h4>
+
+                /*Disclaimer for non admin personnel*/
+                <div class="disclaimerBox">
+                    <h5>
+                        <strong>Attention!</strong> If you are not a PikYak Admin personnel
+
+                    </h5>
+                    <h5>
+                        please tap on the "Pik Yak" home button
+
+                    </h5>
+                    <h5>
+                        at the top left of your screen!
+                    </h5>
+                </div>
+
+
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">

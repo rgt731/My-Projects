@@ -217,3 +217,12 @@ font-weight:bold;
 
 /* END Sort */
 
+/*Log in Page*/
+
+.disclaimerBox{
+
+    border:solid;
+    border-color:rebeccapurple; 
+    max-width: 250px;
+    padding-left:5px;
+}
