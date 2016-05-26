@@ -310,6 +310,9 @@ return View(yakViewModels);
 
 
                     int yakNumber = Int32.Parse(yakId);
+
+
+
                     //create new report     //Instaniate a new Like object- object that will get saved into the database
                     var newReport = new Report();
 
@@ -431,13 +434,26 @@ return View(yakViewModels);
                                    Count = grouping.Count()
                                };
 
+            //Get Yak Count
+           /* var yakCounts = from yc in db.Yaks
+
+                               group yc by yc.Id into grouping
+                               select new
+                               {
+                                   YakId = grouping.Key,
+                                   Count = grouping.Count()
+                               };*/
 
 
             foreach (var y in yaks)
             {
 
                 var yvm = new YakViewModel() { Yak = y };
-             
+
+                /**************************/
+                /***** Like Counts ********/
+                /**************************/
+
                 if (likeCounts.Where(lc => lc.LikeId == y.Id).Count() > 0)
                 {
                     yvm.LikeCount = likeCounts.Where(yc => yc.LikeId == y.Id).First().Count;
@@ -448,6 +464,10 @@ return View(yakViewModels);
                 {
                     yvm.LikeCount = 0;
                 }
+
+                /****************************/
+                /***** Report Counts ********/
+                /****************************/
 
                 if (reportCounts.Where(rc => rc.YakId == y.Id).Count() > 0)
                 {
@@ -460,8 +480,29 @@ return View(yakViewModels);
                     yvm.ReportCount = 0;
                 }
 
+                /*************************/
+                /***** Yak Counts ********/
+                /*************************/
+
+                /*
+                if (yakCounts.Where(yc => yc.YakId == y.Id).Count() > 0)
+                {
+                    yvm.ReportCount = reportCounts.Where(yc => yc.YakId == y.Id).First().Count;
+                }
+
+                //if the like count was less than 0 set it to 0 then add one
+                else
+                {
+                    yvm.ReportCount = 0;
+                }
+
                 //Compute Distance
-                // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);
+                // yvm.DistanceAway = DistanceBetweenPoints(userLat, userLong, y.Latitude, y.Longitude);*/
+
+                /**************************************/
+                /*This actually helps display the yaks*/
+                /**************************************/
+
                 yakViewModels.Add(yvm);
 
             }

@@ -76,7 +76,19 @@
 */
 
 
+/*  Layout Page CSS  */
 
+
+/*
+.navbar{
+    position:fixed; 
+    width: 100%; 
+    text-align: center;
+    top: 0;
+    display:block; 
+
+
+}*/
 
 
 /*FAQ CSS*/
@@ -203,11 +215,6 @@
  }
 
 
-/*Make a clicked item bold?*/
-
-a:visited {
-font-weight:bold;
-}
 
 /* Sort */
 
@@ -225,4 +232,26 @@ font-weight:bold;
     border-color:rebeccapurple; 
     max-width: 250px;
     padding-left:5px;
+}
+
+/*Admin Page CSS*/
+.adminHeader{
+    text-align: center;
+    font-size:250%; 
+    font-weight:bold; 
+    color:#009688; 
+}
+
+.adminText{
+
+    margin-left:20%; 
+}
+
+/*Index CSS*/
+
+.reportBtn{
+    float: right; 
+}
+.i{
+    color:rebeccapurple; 
 }
