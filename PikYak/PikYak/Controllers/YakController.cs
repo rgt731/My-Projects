@@ -159,36 +159,55 @@ return View(yakViewModels);
 
             Yak yak;
 
-            if (replyId != null)
+            /*Checking for message length of 140 chracters or less*/
+            if (yakMessage.Length < 141)
             {
-                yak = new Yak()
+
+
+
+
+
+                if (replyId != null)
                 {
-                    Text = yakMessage,
-                    Latitude = latitude,
-                    Longitude = longitude,
-                    Confidence = confidence,
-                    Sentiment = sentiment,
-                    ReplyToYakId = replyId.Value,
-                    Timestamp = DateTime.Now
-                };
-            }
+                    yak = new Yak()
+                    {
+                        Text = yakMessage,
+                        Latitude = latitude,
+                        Longitude = longitude,
+                        Confidence = confidence,
+                        Sentiment = sentiment,
+                        ReplyToYakId = replyId.Value,
+                        Timestamp = DateTime.Now
+                    };
+                }
+                else
+                {
+                    yak = new Yak()
+                    {
+                        Text = yakMessage,
+                        Latitude = latitude,
+                        Longitude = longitude,
+                        Confidence = confidence,
+                        Sentiment = sentiment,
+                        Timestamp = DateTime.Now
+                    };
+                }
+
+                db.Yaks.Add(yak);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }//end of function - yakmessage was 140 chracters or less
+
             else
             {
-                yak = new Yak()
-                {
-                    Text = yakMessage,
-                    Latitude = latitude,
-                    Longitude = longitude,
-                    Confidence = confidence,
-                    Sentiment = sentiment,
-                    Timestamp = DateTime.Now
-                };
+                ViewBag.ErrorMessage = "Sorry a 'Yak' can't have more than 140 characters! Try and shorten the length a bit! ";
+                return View();
+
             }
-             
-            db.Yaks.Add(yak);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+
+
+        }//End create function
 
         // This should work for the search function.
         /*public ActionResult Index(string id)

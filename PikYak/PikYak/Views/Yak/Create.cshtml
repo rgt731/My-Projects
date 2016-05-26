@@ -13,6 +13,7 @@
     <div class="container">
         <div class="input-group textBox">
             <textarea type="text" name="yakMessage" class="form-control textBox" placeholder="Your Message" aria-describedby="basic-addon1" value="yakMessage" id="yakMessage" method="get"></textarea>
+            @ViewBag.ErrorMessage
         </div>
     </div>
     <div class="modal-footer">
@@ -25,23 +26,23 @@
         <div class="progress">
 
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="kindBar">
-                <span class="sr-only" id="confidenceBar" name="confidenceBar" value="confidenceBar">45%</span>
+                <span class="sr-only" id="confidenceBar" name="confidenceBar" value="confidenceBar">35%</span>
             </div>
         </div>
         <div class="">
             <div class="row">
-                <div class="col-md-4"></div>
-                <button type="button" class="formButtons col-md-2 text-center" data-dismiss="modal">@Html.ActionLink("Cancel", "Index", "Yak", new {@class="formButtons"})</button>
-
-
-                <button type="submit" class="formButtons col-md-2 text-center" data-dismiss="modal" value="submit" name="submit" id="submit">Submit</button>
-                <div class="col-md-4"></div>
+                <div class="col-md-3"></div>
+                <button type="submit" class="formButtons col-md-3 text-left" data-dismiss="modal" value="submit" name="submit" id="submit">Submit</button>
+                <button type="button" class="formButtons col-md-3 text-right" data-dismiss="modal">@Html.ActionLink("Cancel", "Index", "Yak", new {@class="formButtons"})</button>
+              
+                <div class="col-md-3"></div>
             </div>
         </div>
     </div>
 </form>
 
-<script src="~/Scripts/SentimentClient.js"></script>
 
+<!--Java Script Files-->
+<script src="~/Scripts/SentimentClient.js"></script>
 <script src="~/Scripts/geolocation.js"></script>
 
