@@ -17,12 +17,10 @@
 
 <div class="YakPost">
 
-@{ 
-    foreach (var yvm in Model)
-    {
-        Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yvm);
+    @{
+        foreach (var yvm in Model)
+        {
+            Html.RenderPartial("~/Views/Yak/YaksPartial.cshtml", yvm);
+        }
     }
-}
-
 </div>
-

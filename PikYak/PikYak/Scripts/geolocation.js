@@ -9,10 +9,10 @@ $(document).ready(function () {
     }
 
     function success(position) {
-        latRound = Math.round(position.coords.latitude);
-        longRound = Math.round(position.coords.longitude);
-        document.getElementById("lat").value = latRound;
-        document.getElementById("long").value = longRound;
+        //latRound = Math.round(position.coords.latitude);
+        //longRound = Math.round(position.coords.longitude);
+        document.getElementById("lat").value = position.coords.latitude;
+        document.getElementById("long").value = position.coords.longitude;
         
 
         var mapcanvas = document.createElement('div');

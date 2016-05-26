@@ -1,4 +1,12 @@
 ﻿
+img {
+    max-width: 100%;
+}
+
+.panel-body p{
+    font-size:1.5em;
+    text-align: left;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
